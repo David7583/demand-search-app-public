@@ -1,0 +1,14 @@
+{
+  "protocol": "ODIP/0.1.3-exp.1",
+  "message_id": "00000000-0000-0000-0000-0000000003ea",
+  "message_type": "intent.withdraw",
+  "timestamp": "2026-11-04T03:00:00Z",
+  "sender": {
+    "participant_id": "user-agent-a"
+  },
+  "payload": {
+    "target_intent_id": "need-001",
+    "reason": "模拟撤回；并非取消合同"
+  },
+  "intent_id": "need-001"
+}

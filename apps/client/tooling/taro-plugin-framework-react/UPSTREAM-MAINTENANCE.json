@@ -1,0 +1,29 @@
+{
+  "upstream_name": "@tarojs/plugin-framework-react",
+  "upstream_version": "4.3.2",
+  "tarball": "https://registry.npmjs.org/@tarojs/plugin-framework-react/-/plugin-framework-react-4.3.2.tgz",
+  "integrity": "sha512-OHdREubcbVguHCYaMsTeR/ZYhDmZA4pwY++DAZacdnFBK6uklvZhIVZKfnCZvNCYns810kpksPEewnZfNzfokA==",
+  "sha256": "9c74ea5396e8c118e18c3b444aa9925b703ff923c484004eb846185416ee1c7a",
+  "patches": [
+    {
+      "path": "package.json",
+      "before_sha256": "d11773c3d0097ec88b8594629990df3812492943ec8c8be10d4d77895d939f87",
+      "after_sha256": "609dbc01d6637a647c8c20842cbca8e75a20125bed1482a6c20cd08e61b1bb97",
+      "change": "version 4.3.2-dsa.1, private true, exact Vite6.4.5 peer; original runtime code unchanged; include provenance and rebuild files in local package"
+    }
+  ],
+  "upstream_files": {
+    "dist/api-loader.js": "f1a68dc93ff44c8294d2f8addacaf16ebc816e76e2fbb7185b28d4a458405b7e",
+    "dist/index.js": "cf76c3289bcfa403d739cd22f9a36e0474d966b26654ed6188409299cc7467c7",
+    "index.js": "a801ab6700bc7bff747dbf91f49f759ed186a79ec630ff70866ffaa5e2794e2e",
+    "dist/runtime.js": "49c8f709b5699a5d69d5f353f2dd82a14fd0eff602429efecb985f9485210a77",
+    "package.json": "d11773c3d0097ec88b8594629990df3812492943ec8c8be10d4d77895d939f87",
+    "dist/api-loader.js.map": "4377994bcada54930f82eaeeebb1c0e81419aec1616c328b96d13ba40dfd0915",
+    "dist/index.js.map": "aec017dade5bf9f1bf96609e4b592e6bdf8266d2643335fe58d4e7a2b11274ee",
+    "dist/runtime.js.map": "6fd094ea6ed40b83e9300637b9769ebf1f457f7581ee4891812797c3b65493d0",
+    "README.md": "c4e5e7a3832bb05ddb32e442d33e08375d5dd4f77d4802fbc57be6abaab3051a",
+    "LICENSE": "984f2dd0f1ef09cefdd374bf43b80f63e6fb70fe9d6247e7ab1379277d6bdc6a"
+  },
+  "runtime_code_changed": false,
+  "validation_status": "pending candidate D integration"
+}

@@ -1,0 +1,12 @@
+{
+  "miniprogramRoot": "dist/weapp/",
+  "projectname": "demand-search-app-s0",
+  "description": "S0 development shell only; no API credentials.",
+  "appid": "touristappid",
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "minified": true
+  },
+  "compileType": "miniprogram"
+}

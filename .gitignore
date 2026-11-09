@@ -1,0 +1,36 @@
+.venv/
+.local/
+node_modules/
+dist/
+# Reviewed maintenance source, not generated application output.
+!/apps/client/tooling/taro-vite-runner/dist/
+!/apps/client/tooling/taro-plugin-framework-react/dist/
+build/
+coverage/
+.pytest_cache/
+.ruff_cache/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env*
+!.env.example
+runtime/
+*.sqlite*
+*.db
+*.db-*
+*.log
+*.pem
+*.key
+*.pfx
+*.p12
+project.private.config.json
+.DS_Store
+
+# Compiler-generated caches
+.swc/
+.taro/
+.vite/
+.eslintcache
+
+# Exact, validated synthetic seed artifact; runtime databases remain excluded.
+!/data/simulated-market/market.synthetic.sqlite3

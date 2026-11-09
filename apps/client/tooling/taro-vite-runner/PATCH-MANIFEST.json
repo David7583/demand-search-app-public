@@ -1,0 +1,96 @@
+{
+  "format": 1,
+  "maintained_version": "4.3.2-dsa.1",
+  "upstream": {
+    "name": "@tarojs/vite-runner",
+    "version": "4.3.2",
+    "tarball": "https://registry.npmjs.org/@tarojs/vite-runner/-/vite-runner-4.3.2.tgz",
+    "sha256": "88453630d4f960a8461814594939e75012e333ad943f68315deb89ec7bf86d43",
+    "integrity": "sha512-QMVw1+iPFZYz5yLQqWRkuXVOfwUNfcG0Xbty3gaU2zc8k5liju2Oukfhmb/7b+iiF5DqzcVbWGGYhuj8cy71lw==",
+    "license": "MIT",
+    "gitHead": null
+  },
+  "upstream_tracking": "https://github.com/NervJS/taro/tree/v4.3.2/packages/taro-vite-runner; exact baseline is npm archive because registry gitHead is absent. No upstream issue or endorsement claimed.",
+  "license_file_sha256": "984f2dd0f1ef09cefdd374bf43b80f63e6fb70fe9d6247e7ab1379277d6bdc6a",
+  "changed": [
+    {
+      "path": "dist/index.h5.js",
+      "before_sha256": "f74d03d11171d3ac7f55bd0aaf74655ead52e422607d6fb088d5e2b2e10170fe",
+      "after_sha256": "a6adb5623fc036427d0be4fd240cef68f1916d3e963a582585ceec0fac2306a0"
+    },
+    {
+      "path": "dist/index.mini.js",
+      "before_sha256": "450a19dfd765efd44ab0460ac3a694802cf21fe6f4c3a7007afbd23e2f3576cd",
+      "after_sha256": "6463ef895c519eb84f885835b44d1fb720edef9768f6522f22e683c673b5ee06"
+    },
+    {
+      "path": "dist/index.harmony.js",
+      "before_sha256": "e43a872dde3b36a39b3268728366e210eb8e0b33ae1a72d7196e85f9baac17f8",
+      "after_sha256": "f4ae4b5dbcb3d0c8f80d8e68b4e4e9d7358c7d82ec11f49c828a9d001197c8ce"
+    },
+    {
+      "path": "dist/h5/config.js",
+      "before_sha256": "6bad8d3439695d927480cce43f71a0b509dfa3e17d3691b7d344fd18cb917128",
+      "after_sha256": "c316410d8afc672305d677259fcc40db8e92673f0b8961b7e40c313acafb704e"
+    },
+    {
+      "path": "dist/h5/mpa.js",
+      "before_sha256": "6403fbee885853e690d3f7b343b364a88dad6df617a20a48ca332dc750a30b46",
+      "after_sha256": "1d39c84d29d559fcefedb4761db844ef61db19082b6c7f1d487992ee06e8b4e7"
+    },
+    {
+      "path": "dist/mini/config.js",
+      "before_sha256": "f82d9e90087b3b7b4ffed7168318931822704b73b36aef709f082da9672ed341",
+      "after_sha256": "3d4c6dea3dffc4da2ad9010b05f085d64c7186c369cc3a411b94b20cc18e0cb8"
+    },
+    {
+      "path": "dist/mini/emit.js",
+      "before_sha256": "7a63841c98ee404be285f211193663215c76e776d4950a20b37b2a76803371cb",
+      "after_sha256": "1cf1d7ad8b40eaa61a2d64cb72bd33f3a3ccdbb13b035587ec8f7fac5dc16719"
+    },
+    {
+      "path": "package.json",
+      "before_sha256": "279224a91a1a9e00a9357c30728a85d89d24869f5e42c11011d974151e05a436",
+      "after_sha256": "976d4468c09a3cdf96a8b49f8ddf6515aceb5d69603b2a163fa21b8e44a3feee"
+    }
+  ],
+  "removed": [
+    {
+      "path": "dist/index.h5.js.map",
+      "sha256": "f6c511ee142b53b7a531f7a3d81b90b3ab3b68f3d86630bf4462e7d493385239",
+      "reason": "Stale mapping after distribution-source patch; original mapping is retained in verified upstream tarball."
+    },
+    {
+      "path": "dist/index.mini.js.map",
+      "sha256": "22b921a467de7436cc4d91569989325af0f31a75a2424425c8f05e1fbebc9b8c",
+      "reason": "Stale mapping after distribution-source patch; original mapping is retained in verified upstream tarball."
+    },
+    {
+      "path": "dist/index.harmony.js.map",
+      "sha256": "6faa6dd85a34f9939f9eb532d412fd64825e3e7894e55d046b8be3e9d9d720cf",
+      "reason": "Stale mapping after distribution-source patch; original mapping is retained in verified upstream tarball."
+    },
+    {
+      "path": "dist/h5/config.js.map",
+      "sha256": "ffc7b61250b86e3ff6fc08b26c2dbe3729b633d9c4d1c1a054fea2762822dc48",
+      "reason": "Stale mapping after distribution-source patch; original mapping is retained in verified upstream tarball."
+    },
+    {
+      "path": "dist/h5/mpa.js.map",
+      "sha256": "ca6cff1772eb068110a05cc8f41c8b7bd00efaba01ddaed67ff22eb9ccc1a5ae",
+      "reason": "Stale mapping after distribution-source patch; original mapping is retained in verified upstream tarball."
+    },
+    {
+      "path": "dist/mini/config.js.map",
+      "sha256": "3ce1ff1c5805d60f8a33e12dc8c2f02dddc1ee7ea7cd01336770ea4d0301c5cd",
+      "reason": "Stale mapping after distribution-source patch; original mapping is retained in verified upstream tarball."
+    },
+    {
+      "path": "dist/mini/emit.js.map",
+      "sha256": "3f5b7a19fb55260081d34a7942ef748bf78eee4dd5ba0c2294dc6a808fbbe4e3",
+      "reason": "Stale mapping after distribution-source patch; original mapping is retained in verified upstream tarball."
+    }
+  ],
+  "validation_status": "Source patch prepared; candidate install, security audit and integration builds pending.",
+  "supported_scope_claim": "Candidate evaluation only: React H5 and weapp. Other Taro targets not validated."
+}

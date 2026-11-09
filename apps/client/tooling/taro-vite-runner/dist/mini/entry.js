@@ -1,0 +1,161 @@
+"use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const node_path_1 = __importDefault(require("node:path"));
+const helper_1 = require("@tarojs/helper");
+const shared_1 = require("@tarojs/shared");
+const utils_1 = require("../utils");
+const constants_1 = require("../utils/constants");
+const native_support_1 = require("./native-support");
+const ENTRY_SUFFIX = '?entry-loader=true';
+function default_1(viteCompilerContext) {
+    return {
+        name: 'taro:vite-mini-entry',
+        enforce: 'pre',
+        resolveId(source, _importer, options) {
+            if ((viteCompilerContext === null || viteCompilerContext === void 0 ? void 0 : viteCompilerContext.isApp(source)) && options.isEntry) {
+                return (0, utils_1.appendVirtualModulePrefix)(source + ENTRY_SUFFIX);
+            }
+            return null;
+        },
+        load(id) {
+            return __awaiter(this, void 0, void 0, function* () {
+                if (viteCompilerContext && id.endsWith(ENTRY_SUFFIX)) {
+                    const rawId = (0, utils_1.stripVirtualModulePrefix)(id).replace(ENTRY_SUFFIX, '');
+                    const { taroConfig, app } = viteCompilerContext;
+                    const appConfig = app.config;
+                    const runtimePath = Array.isArray(taroConfig.runtimePath) ? taroConfig.runtimePath : [taroConfig.runtimePath];
+                    let setReconcilerPost = '';
+                    const setReconciler = runtimePath.reduce((res, item) => {
+                        if (item && /^post:/.test(item)) {
+                            setReconcilerPost += `import '${item.replace(/^post:/, '')}'\n`;
+                            return res;
+                        }
+                        else {
+                            return res + `import '${item}'\n`;
+                        }
+                    }, '');
+                    const { importFrameworkStatement, frameworkArgs, creator, creatorLocation, modifyInstantiate } = viteCompilerContext.loaderMeta;
+                    const createApp = `${creator}(component, ${frameworkArgs})`;
+                    const appConfigStr = (0, utils_1.prettyPrintJson)(appConfig);
+                    let instantiateApp = taroConfig.blended
+                        ? [
+                            `\nvar app = ${createApp}`,
+                            'app.onLaunch()',
+                            'exports.taroApp = app'
+                        ].join('\n')
+                        : `var inst = App(${createApp})`;
+                    if (typeof modifyInstantiate === 'function') {
+                        instantiateApp = modifyInstantiate(instantiateApp, 'app');
+                    }
+                    // pages
+                    viteCompilerContext.pages.forEach((page) => __awaiter(this, void 0, void 0, function* () {
+                        // 小程序原生页面
+                        if (page.isNative) {
+                            if (page.templatePath) {
+                                const source = (0, native_support_1.miniTemplateLoader)(this, page.templatePath, viteCompilerContext.sourceDir);
+                                this.emitFile({
+                                    type: 'asset',
+                                    fileName: viteCompilerContext.getTemplatePath(page.name),
+                                    source
+                                });
+                            }
+                            page.cssPath && this.addWatchFile(page.cssPath);
+                        }
+                        this.emitFile({
+                            type: 'chunk',
+                            id: `${page.scriptPath}${page.isNative ? native_support_1.QUERY_IS_NATIVE_PAGE : ''}`,
+                            fileName: viteCompilerContext.getScriptPath(page.name),
+                            implicitlyLoadedAfterOneOf: [rawId]
+                        });
+                    }));
+                    // native components
+                    for (const comp of viteCompilerContext.nativeComponents.values()) {
+                        viteCompilerContext.generateNativeComponent(this, comp, [rawId]);
+                    }
+                    // comp' script
+                    if (!viteCompilerContext.taroConfig.template.isSupportRecursive) {
+                        this.emitFile({
+                            type: 'chunk',
+                            id: node_path_1.default.resolve(__dirname, '../template/comp'),
+                            fileName: viteCompilerContext.getScriptPath(constants_1.baseCompName),
+                            implicitlyLoadedAfterOneOf: [rawId]
+                        });
+                    }
+                    // custom-wrapper' script
+                    this.emitFile({
+                        type: 'chunk',
+                        id: node_path_1.default.resolve(__dirname, '../template/custom-wrapper'),
+                        fileName: viteCompilerContext.getScriptPath(constants_1.customWrapperName),
+                        implicitlyLoadedAfterOneOf: [rawId]
+                    });
+                    // tabbar
+                    if (appConfig.tabBar && !(0, helper_1.isEmptyObject)(appConfig.tabBar)) {
+                        const list = appConfig.tabBar.list || [];
+                        const { sourceDir } = viteCompilerContext;
+                        list.forEach((item) => __awaiter(this, void 0, void 0, function* () {
+                            const { iconPath, selectedIconPath } = item;
+                            if (iconPath && !iconPath.startsWith('@')) {
+                                const filePath = node_path_1.default.resolve(sourceDir, iconPath);
+                                this.emitFile({
+                                    type: 'asset',
+                                    fileName: (0, helper_1.removePathPrefix)(iconPath),
+                                    source: Uint8Array.from(helper_1.fs.readFileSync(filePath))
+                                });
+                                this.addWatchFile(filePath);
+                            }
+                            if (selectedIconPath && !selectedIconPath.startsWith('@')) {
+                                const filePath = node_path_1.default.resolve(sourceDir, selectedIconPath);
+                                this.emitFile({
+                                    type: 'asset',
+                                    fileName: (0, helper_1.removePathPrefix)(selectedIconPath),
+                                    source: Uint8Array.from(helper_1.fs.readFileSync(filePath))
+                                });
+                                this.addWatchFile(filePath);
+                            }
+                        }));
+                    }
+                    // darkmode
+                    if (appConfig.darkmode && (0, shared_1.isString)(appConfig.themeLocation)) {
+                        const themePath = node_path_1.default.resolve(viteCompilerContext.sourceDir, appConfig.themeLocation);
+                        this.emitFile({
+                            type: 'asset',
+                            fileName: appConfig.themeLocation,
+                            source: Uint8Array.from(helper_1.fs.readFileSync(themePath))
+                        });
+                        this.addWatchFile(themePath);
+                    }
+                    return [
+                        setReconciler,
+                        'import { window } from "@tarojs/runtime"',
+                        `import { ${creator} } from "${creatorLocation}"`,
+                        'import { initPxTransform } from "@tarojs/taro"',
+                        setReconcilerPost,
+                        `import component from "${(0, utils_1.escapePath)(rawId)}"`,
+                        importFrameworkStatement,
+                        `var config = ${appConfigStr};`,
+                        'window.__taroAppConfig = config',
+                        instantiateApp,
+                        'initPxTransform({',
+                        `designWidth: ${taroConfig.designWidth || 750},`,
+                        `deviceRatio: ${JSON.stringify(taroConfig.deviceRatio || { 750: 1 })}`,
+                        '})'
+                    ].join('\n');
+                }
+            });
+        }
+    };
+}
+exports.default = default_1;
+//# sourceMappingURL=entry.js.map

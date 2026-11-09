@@ -1,0 +1,171 @@
+{
+  "format": "demand-search-ncp-import-lock-v1",
+  "import_date": "2026-11-04",
+  "protocol": "ODIP/0.1.3-exp.1",
+  "upstream": {
+    "public_name": "NeedConcord Protocol",
+    "repository": "https://github.com/David7583/needconcord-protocol",
+    "public_main_commit": "88def78378c9c95f80976f3c11a261019236486d",
+    "public_main_verified_via_github_api": true,
+    "release_tag": "v0.1.3-exp.1",
+    "release_tag_object": "97df9518556b8f1a3a320f3acba3d2da5803abbb",
+    "release_commit": "6975ed989d49365453514d7eeb0833feb3138cfb",
+    "local_research_commit": "cff62700a63a9ae599d73fdd7ed5245a921326cc",
+    "local_worktree_clean_at_audit": true,
+    "release_archive_sha256": "91a81ee7f278a4346d5e9c4eab42b1109d59997c06f1b3f00f6de8d550278587"
+  },
+  "files": [
+    {
+      "path": "vendor/ncp/schemas/packet.schema.json",
+      "upstream_path": "schemas/packet.schema.json",
+      "sha256": "15e59c84cbf98a4e88371695be247fd527d825c54ed2f3f1820f5b3031abafb0",
+      "modified": false,
+      "source": "https://github.com/David7583/needconcord-protocol/blob/88def78378c9c95f80976f3c11a261019236486d/schemas/packet.schema.json"
+    },
+    {
+      "path": "vendor/ncp/LICENSE",
+      "upstream_path": "LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "modified": false,
+      "source": "https://github.com/David7583/needconcord-protocol/blob/88def78378c9c95f80976f3c11a261019236486d/LICENSE"
+    },
+    {
+      "path": "vendor/ncp/NOTICE.md",
+      "upstream_path": "NOTICE.md",
+      "sha256": "5ad18b9613c3cf38980649cb3b65244ac99f52675e7973f1886788d822a3f0a2",
+      "modified": false,
+      "source": "https://github.com/David7583/needconcord-protocol/blob/88def78378c9c95f80976f3c11a261019236486d/NOTICE.md"
+    },
+    {
+      "path": "vendor/ncp/LICENSE-DOCS.md",
+      "upstream_path": "LICENSE-DOCS.md",
+      "sha256": "cfde5b5b91bd06012877d2714ec1698ab9f2628984f1cb6cf95b91f9fd6ab9e5",
+      "modified": false,
+      "source": "https://github.com/David7583/needconcord-protocol/blob/88def78378c9c95f80976f3c11a261019236486d/LICENSE-DOCS.md"
+    },
+    {
+      "path": "vendor/ncp/LICENSES/CC-BY-4.0.txt",
+      "upstream_path": "LICENSES/CC-BY-4.0.txt",
+      "sha256": "2ade8c89b8bbe0d859b124a9e47032c8494022f43091e8278ae8e2554a292196",
+      "modified": false,
+      "source": "https://github.com/David7583/needconcord-protocol/blob/88def78378c9c95f80976f3c11a261019236486d/LICENSES/CC-BY-4.0.txt"
+    },
+    {
+      "path": "vendor/ncp/docs/PROVENANCE.md",
+      "upstream_path": "docs/PROVENANCE.md",
+      "sha256": "f97ab142b48b615801bc1530004c029d84a27169f91646879af02730ce115b12",
+      "modified": false,
+      "source": "https://github.com/David7583/needconcord-protocol/blob/88def78378c9c95f80976f3c11a261019236486d/docs/PROVENANCE.md"
+    },
+    {
+      "path": "vendor/ncp/conformance/vectors/valid-intent.publish.json",
+      "upstream_path": "conformance/vectors/valid-intent.publish.json",
+      "sha256": "2192272a745ea7480c77b629ebe01d665589b86d22c3439bbbc29d94082494e4",
+      "modified": false,
+      "source": "https://github.com/David7583/needconcord-protocol/blob/88def78378c9c95f80976f3c11a261019236486d/conformance/vectors/valid-intent.publish.json"
+    },
+    {
+      "path": "vendor/ncp/conformance/vectors/valid-intent.update.json",
+      "upstream_path": "conformance/vectors/valid-intent.update.json",
+      "sha256": "88fcf550a3bad8d177565594482d15e0d26f2d5a14f1f8971e6e4bbb74a9101a",
+      "modified": false,
+      "source": "https://github.com/David7583/needconcord-protocol/blob/88def78378c9c95f80976f3c11a261019236486d/conformance/vectors/valid-intent.update.json"
+    },
+    {
+      "path": "vendor/ncp/conformance/vectors/valid-intent.withdraw.json",
+      "upstream_path": "conformance/vectors/valid-intent.withdraw.json",
+      "sha256": "831c73e6cbf786f35a479666e156e9d7fcdc16e9bdbff7e6d067c5939f6b4257",
+      "modified": false,
+      "source": "https://github.com/David7583/needconcord-protocol/blob/88def78378c9c95f80976f3c11a261019236486d/conformance/vectors/valid-intent.withdraw.json"
+    },
+    {
+      "path": "vendor/ncp/conformance/vectors/missing-intent.update.json",
+      "upstream_path": "conformance/vectors/missing-intent.update.json",
+      "sha256": "0b7b60e9c00e36d1795db46f5d4a7684ac3808589a48348556406c620bc25e42",
+      "modified": false,
+      "source": "https://github.com/David7583/needconcord-protocol/blob/88def78378c9c95f80976f3c11a261019236486d/conformance/vectors/missing-intent.update.json"
+    },
+    {
+      "path": "vendor/ncp/conformance/vectors/missing-intent-id-intent.publish.json",
+      "upstream_path": "conformance/vectors/missing-intent-id-intent.publish.json",
+      "sha256": "2b65fcf3493116218198b677de99122f6da0a112aa8cc8b54089e117166a9aa9",
+      "modified": false,
+      "source": "https://github.com/David7583/needconcord-protocol/blob/88def78378c9c95f80976f3c11a261019236486d/conformance/vectors/missing-intent-id-intent.publish.json"
+    },
+    {
+      "path": "vendor/ncp/conformance/vectors/missing-intent-id-intent.update.json",
+      "upstream_path": "conformance/vectors/missing-intent-id-intent.update.json",
+      "sha256": "510c5da28d1fd666ad5dd31532b74a12b3a0eda06a6ed9c227c90d5706cb895c",
+      "modified": false,
+      "source": "https://github.com/David7583/needconcord-protocol/blob/88def78378c9c95f80976f3c11a261019236486d/conformance/vectors/missing-intent-id-intent.update.json"
+    },
+    {
+      "path": "vendor/ncp/conformance/vectors/missing-intent-id-intent.withdraw.json",
+      "upstream_path": "conformance/vectors/missing-intent-id-intent.withdraw.json",
+      "sha256": "76b36b045733ca2bf520b0f1911c18a1338acb7aa20847c1bd2d4487d169fbbb",
+      "modified": false,
+      "source": "https://github.com/David7583/needconcord-protocol/blob/88def78378c9c95f80976f3c11a261019236486d/conformance/vectors/missing-intent-id-intent.withdraw.json"
+    },
+    {
+      "path": "vendor/ncp/conformance/vectors/bad-uuid.json",
+      "upstream_path": "conformance/vectors/bad-uuid.json",
+      "sha256": "2809687f56ad27b2e145f0b0846b1f43ea55b30a1852545f68bebf2d0debe4e0",
+      "modified": false,
+      "source": "https://github.com/David7583/needconcord-protocol/blob/88def78378c9c95f80976f3c11a261019236486d/conformance/vectors/bad-uuid.json"
+    },
+    {
+      "path": "vendor/ncp/conformance/vectors/uppercase-uuid.json",
+      "upstream_path": "conformance/vectors/uppercase-uuid.json",
+      "sha256": "82c28878d7cbe65643b648b3dcf32f1d22b2bea2024476267114fab726c85060",
+      "modified": false,
+      "source": "https://github.com/David7583/needconcord-protocol/blob/88def78378c9c95f80976f3c11a261019236486d/conformance/vectors/uppercase-uuid.json"
+    },
+    {
+      "path": "vendor/ncp/conformance/vectors/bad-version.json",
+      "upstream_path": "conformance/vectors/bad-version.json",
+      "sha256": "28c9b2d8c73adc4a72630edb04cbda7a218842bf2b70a473136e643a494e166d",
+      "modified": false,
+      "source": "https://github.com/David7583/needconcord-protocol/blob/88def78378c9c95f80976f3c11a261019236486d/conformance/vectors/bad-version.json"
+    },
+    {
+      "path": "vendor/ncp/conformance/vectors/non-utc-time.json",
+      "upstream_path": "conformance/vectors/non-utc-time.json",
+      "sha256": "08b2709f4101d8c10b3efd2f0e25d460fed856909ef1e02e6b53762ad89ea500",
+      "modified": false,
+      "source": "https://github.com/David7583/needconcord-protocol/blob/88def78378c9c95f80976f3c11a261019236486d/conformance/vectors/non-utc-time.json"
+    },
+    {
+      "path": "vendor/ncp/conformance/vectors/invalid-calendar-date.json",
+      "upstream_path": "conformance/vectors/invalid-calendar-date.json",
+      "sha256": "84bc8cc97141511b350ec49274ca0d84e3812989e15b4121f5a1268da1dfe988",
+      "modified": false,
+      "source": "https://github.com/David7583/needconcord-protocol/blob/88def78378c9c95f80976f3c11a261019236486d/conformance/vectors/invalid-calendar-date.json"
+    },
+    {
+      "path": "vendor/ncp/conformance/vectors/lowercase-time.json",
+      "upstream_path": "conformance/vectors/lowercase-time.json",
+      "sha256": "fb646b7b6ebf7ab700388728b5baf7c2f25c6484c928d444eb2d38147a0f0192",
+      "modified": false,
+      "source": "https://github.com/David7583/needconcord-protocol/blob/88def78378c9c95f80976f3c11a261019236486d/conformance/vectors/lowercase-time.json"
+    },
+    {
+      "path": "vendor/ncp/conformance/vectors/unknown-noncritical-extension.json",
+      "upstream_path": "conformance/vectors/unknown-noncritical-extension.json",
+      "sha256": "2fb530e45da88eb46a1aac0fe6434c7db75f996084d9fc8f1bcceb76f0a52228",
+      "modified": false,
+      "source": "https://github.com/David7583/needconcord-protocol/blob/88def78378c9c95f80976f3c11a261019236486d/conformance/vectors/unknown-noncritical-extension.json"
+    },
+    {
+      "path": "vendor/ncp/conformance/vectors/private-network-intent.json",
+      "upstream_path": "conformance/vectors/private-network-intent.json",
+      "sha256": "347242f1b1d6cda42aee240cc5575770af6e9edb58ec7161d86b0c57712d78f9",
+      "modified": false,
+      "source": "https://github.com/David7583/needconcord-protocol/blob/88def78378c9c95f80976f3c11a261019236486d/conformance/vectors/private-network-intent.json"
+    }
+  ],
+  "selected_vector_count": 15,
+  "runtime_upstream_directory_dependency": false,
+  "upstream_implementation_imported": false,
+  "remote_reference_resolution": false,
+  "license_note": "Apache-2.0 machine-readable assets; documentation CC BY 4.0 within upstream licensor rights. Original notices and provenance preserved. Application license remains separate."
+}

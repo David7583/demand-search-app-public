@@ -1,0 +1,62 @@
+{
+  "upstream": {
+    "package": "globs",
+    "version": "0.1.4",
+    "repository": "https://github.com/stephenmathieson/node-globs",
+    "registry_url": "https://registry.npmjs.org/globs/0.1.4",
+    "tarball_url": "https://registry.npmjs.org/globs/-/globs-0.1.4.tgz",
+    "integrity": "sha512-D23dWbOq48vlOraoSigbcQV4tWrnhwk+E/Um2cMuDS3/5dwGmdFeA7L/vAvDhLFlQOTDqHcXh35m/71g2A2WzQ==",
+    "sha256": "e5543624b13d340aa540b2536b78ecf1cd7a5c2f14f80f2f750cebc0449acc77",
+    "license": "MIT",
+    "copyright": "Copyright (c) 2013 Stephen Mathieson <me@stephenmathieson.com>",
+    "license_location": "Readme.md, License section"
+  },
+  "fork": {
+    "package": "globs",
+    "version": "0.1.4-dsa.1",
+    "maintained_by": "Demand Search App maintainers",
+    "ai_assistance": true,
+    "upstream_release": false,
+    "runtime_dependency": {
+      "glob": "14.0.3"
+    },
+    "entry": "glob/raw",
+    "patch": "globs-0.1.4-to-dsa.1.patch",
+    "patch_sha256": "0ceb6391f3df93b9ea31a2b642dab1d043f349d1980df3459c140bf964bbe3c2"
+  },
+  "files": [
+    {
+      "path": "index.js",
+      "fork_sha256": "45c43e372c8a2001b5b896014ce6080805d49faa1e3958d41ccb06b696e155b6",
+      "upstream_sha256": "ff63dff85ba27edbeec95815dea934dfb420723e60dde95dacc5da0e9823daa2"
+    },
+    {
+      "path": "index.d.ts",
+      "fork_sha256": "b657879cc49706c0d0008ba28fb020b8e247ab520729a9e0c510869d2ba4ebdd",
+      "upstream_sha256": "454b2857910e592fe7d140e537e5fa597ade2616f643bf64f95150ae46ad234d"
+    },
+    {
+      "path": "package.json",
+      "fork_sha256": "fcef67602c74e7ea6fde5d66c867d35f33573921cd158178d547d99a317d3bd9",
+      "upstream_sha256": "0365b1272f7309799f5c18c8bf037de79f2eb9ff700b7f5c692565f1641bedd0"
+    },
+    {
+      "path": "Readme.md",
+      "fork_sha256": "e43a709f7e487baef9ea4b08e9a8dd6d083dcc2a0621b737d3b6b7a8a2522e53",
+      "upstream_sha256": "e43a709f7e487baef9ea4b08e9a8dd6d083dcc2a0621b737d3b6b7a8a2522e53"
+    },
+    {
+      "path": "LICENSE",
+      "fork_sha256": "b4eb590bb57c1f4fb1ef9df84af55e5ce689601994a8b2fd3a61fecff75f1b98"
+    },
+    {
+      "path": "README-FORK.md",
+      "fork_sha256": "99e1e10ae3df02cfc9ffac0a8abeae65ddd0a6ea325c45a716c1041ab18ffbff"
+    }
+  ],
+  "security_sources": [
+    "https://github.com/advisories/GHSA-g3hv-75wg-m249",
+    "https://github.com/advisories/GHSA-3g3m-2fjr-6pw4"
+  ],
+  "api_source": "https://github.com/isaacs/node-glob/tree/v14.0.3"
+}

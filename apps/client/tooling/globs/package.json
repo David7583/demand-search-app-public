@@ -1,0 +1,28 @@
+{
+  "name": "globs",
+  "version": "0.1.4-dsa.1",
+  "private": true,
+  "description": "Demand Search App compatibility fork of globs 0.1.4 using glob 14; not an upstream release.",
+  "author": "Stephen Mathieson <me@stephenmathieson.com>",
+  "contributors": [
+    "Demand Search App maintainers (AI-assisted compatibility changes)"
+  ],
+  "main": "index.js",
+  "types": "index.d.ts",
+  "license": "MIT",
+  "engines": {
+    "node": "18 || 20 || >=22"
+  },
+  "dependencies": {
+    "glob": "14.0.3"
+  },
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "LICENSE",
+    "Readme.md",
+    "README-FORK.md",
+    "UPSTREAM.json",
+    "globs-0.1.4-to-dsa.1.patch"
+  ]
+}

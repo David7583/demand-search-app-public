@@ -1,0 +1,9 @@
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+
+# Pinned upstream assets must preserve the exact reviewed bytes, including newlines.
+vendor/ncp/** -text
+
+# Maintained upstream dependency archives retain provenance bytes.
+apps/client/tooling/** -text

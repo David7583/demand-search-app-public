@@ -1,0 +1,225 @@
+{
+  "format": 1,
+  "upstream": {
+    "name": "@tarojs/vite-runner",
+    "version": "4.3.2",
+    "tarball": "https://registry.npmjs.org/@tarojs/vite-runner/-/vite-runner-4.3.2.tgz",
+    "sha256": "88453630d4f960a8461814594939e75012e333ad943f68315deb89ec7bf86d43",
+    "integrity": "sha512-QMVw1+iPFZYz5yLQqWRkuXVOfwUNfcG0Xbty3gaU2zc8k5liju2Oukfhmb/7b+iiF5DqzcVbWGGYhuj8cy71lw==",
+    "license": "MIT",
+    "gitHead": null
+  },
+  "operations": [
+    {
+      "path": "dist/index.h5.js",
+      "before": "const vite_1 = require(\"vite\");\n",
+      "after": "",
+      "count": 1
+    },
+    {
+      "path": "dist/index.h5.js",
+      "before": "        const viteCompilerContext =",
+      "after": "        const vite_1 = yield import(\"vite\");\n        const viteCompilerContext =",
+      "count": 1
+    },
+    {
+      "path": "dist/index.h5.js",
+      "before": "require('vite-plugin-static-copy').viteStaticCopy({",
+      "after": "(yield import('vite-plugin-static-copy')).viteStaticCopy({",
+      "count": 1
+    },
+    {
+      "path": "dist/index.mini.js",
+      "before": "const vite_1 = require(\"vite\");\n",
+      "after": "",
+      "count": 1
+    },
+    {
+      "path": "dist/index.mini.js",
+      "before": "        const viteCompilerContext =",
+      "after": "        const vite_1 = yield import(\"vite\");\n        const viteCompilerContext =",
+      "count": 1
+    },
+    {
+      "path": "dist/index.mini.js",
+      "before": "require('vite-plugin-static-copy').viteStaticCopy({",
+      "after": "(yield import('vite-plugin-static-copy')).viteStaticCopy({",
+      "count": 1
+    },
+    {
+      "path": "dist/index.harmony.js",
+      "before": "const vite_1 = require(\"vite\");\n",
+      "after": "",
+      "count": 1
+    },
+    {
+      "path": "dist/index.harmony.js",
+      "before": "        const viteCompilerContext =",
+      "after": "        const vite_1 = yield import(\"vite\");\n        const viteCompilerContext =",
+      "count": 1
+    },
+    {
+      "path": "dist/index.harmony.js",
+      "before": "require('vite-plugin-static-copy').viteStaticCopy({",
+      "after": "(yield import('vite-plugin-static-copy')).viteStaticCopy({",
+      "count": 1
+    },
+    {
+      "path": "dist/h5/config.js",
+      "before": "        transformIndexHtml: {\n            enforce: 'pre',\n            transform(",
+      "after": "        transformIndexHtml: {\n            order: 'pre',\n            handler(",
+      "count": 1
+    },
+    {
+      "path": "dist/h5/mpa.js",
+      "before": "        transformIndexHtml: {\n            enforce: 'pre',\n            transform(",
+      "after": "        transformIndexHtml: {\n            order: 'pre',\n            handler(",
+      "count": 1
+    },
+    {
+      "path": "dist/h5/config.js",
+      "before": "    let cors = true;",
+      "after": "    let cors = false;",
+      "count": 1
+    },
+    {
+      "path": "dist/h5/config.js",
+      "before": "const option = Object.assign(Object.assign({}, (yield (0, runner_utils_1.getSassLoaderOption)(taroConfig))), sassLoaderOption);",
+      "after": "const option = Object.assign(Object.assign({}, (yield (0, runner_utils_1.getSassLoaderOption)(taroConfig))), sassLoaderOption, { api: 'legacy' });",
+      "count": 1
+    },
+    {
+      "path": "dist/mini/config.js",
+      "before": "{ importer });",
+      "after": "{ api: 'legacy', importer });",
+      "count": 1
+    },
+    {
+      "path": "dist/mini/config.js",
+      "before": "                        formats: ['cjs'],",
+      "after": "                        formats: ['cjs'],\n                        cssFileName: 'style',",
+      "count": 1
+    },
+    {
+      "path": "dist/mini/emit.js",
+      "before": "viteCompilerContext.pages.forEach(page => {",
+      "after": "for (const page of viteCompilerContext.pages) {",
+      "count": 1
+    },
+    {
+      "path": "dist/mini/emit.js",
+      "before": "                        });\n                        // emit native components' json",
+      "after": "                        }\n                        // emit native components' json",
+      "count": 1
+    },
+    {
+      "path": "dist/mini/emit.js",
+      "before": "generateTemplateFile(this, viteCompilerContext, {",
+      "after": "yield generateTemplateFile(this, viteCompilerContext, {",
+      "count": 4
+    },
+    {
+      "path": "dist/mini/emit.js",
+      "before": "function generateTemplateFile(ctx, viteCompilerContext, options) {",
+      "after": "async function generateTemplateFile(ctx, viteCompilerContext, options) {",
+      "count": 1
+    },
+    {
+      "path": "dist/mini/emit.js",
+      "before": "const minify = require('html-minifier').minify;",
+      "after": "const minify = require('html-minifier-terser').minify;",
+      "count": 1
+    },
+    {
+      "path": "dist/mini/emit.js",
+      "before": "source = minify(source, {",
+      "after": "source = await minify(source, {",
+      "count": 1
+    },
+    {
+      "path": "dist/index.h5.js",
+      "before": "//# sourceMappingURL=index.h5.js.map",
+      "after": "",
+      "count": 1
+    },
+    {
+      "path": "dist/index.mini.js",
+      "before": "//# sourceMappingURL=index.mini.js.map",
+      "after": "",
+      "count": 1
+    },
+    {
+      "path": "dist/index.harmony.js",
+      "before": "//# sourceMappingURL=index.harmony.js.map",
+      "after": "",
+      "count": 1
+    },
+    {
+      "path": "dist/h5/config.js",
+      "before": "//# sourceMappingURL=config.js.map",
+      "after": "",
+      "count": 1
+    },
+    {
+      "path": "dist/h5/mpa.js",
+      "before": "//# sourceMappingURL=mpa.js.map",
+      "after": "",
+      "count": 1
+    },
+    {
+      "path": "dist/mini/config.js",
+      "before": "//# sourceMappingURL=config.js.map",
+      "after": "",
+      "count": 1
+    },
+    {
+      "path": "dist/mini/emit.js",
+      "before": "//# sourceMappingURL=emit.js.map",
+      "after": "",
+      "count": 1
+    },
+    {
+      "path": "package.json",
+      "before": "{\n  \"name\": \"@tarojs/vite-runner\",\n  \"version\": \"4.3.2\",\n  \"main\": \"index.js\",\n  \"license\": \"MIT\",\n  \"files\": [\n    \"index.js\",\n    \"dist\"\n  ],\n  \"dependencies\": {\n    \"@ampproject/remapping\": \"^2.3.0\",\n    \"@babel/core\": \"^7.24.4\",\n    \"@rollup/plugin-babel\": \"^6.0.4\",\n    \"@rollup/plugin-inject\": \"^5.0.5\",\n    \"@rollup/plugin-terser\": \"^0.4.4\",\n    \"@rollup/pluginutils\": \"^5.1.0\",\n    \"@tarojs/parse-css-to-stylesheet\": \"^0.0.69\",\n    \"@vitejs/plugin-legacy\": \"^4.1.1\",\n    \"acorn-walk\": \"^8.3.2\",\n    \"autoprefixer\": \"^10.4.19\",\n    \"connect-history-api-fallback\": \"^2.0.0\",\n    \"fast-glob\": \"^3.3.2\",\n    \"html-minifier\": \"^4.0.0\",\n    \"json5\": \"^2.2.3\",\n    \"lodash\": \"^4.17.21\",\n    \"magic-string\": \"^0.30.10\",\n    \"mrmime\": \"^2.0.0\",\n    \"picomatch\": \"^4.0.2\",\n    \"postcss-css-variables\": \"^0.19.0\",\n    \"postcss-import\": \"^16.1.0\",\n    \"postcss-load-config\": \"^5.0.3\",\n    \"postcss-modules\": \"^6.0.0\",\n    \"regenerator-runtime\": \"0.11\",\n    \"sax\": \"1.2.4\",\n    \"stylelint\": \"^16.4.0\",\n    \"vite-plugin-static-copy\": \"^0.17.1\",\n    \"@tarojs/helper\": \"4.3.2\",\n    \"@tarojs/runtime\": \"4.3.2\",\n    \"babel-plugin-transform-taroapi\": \"4.3.2\",\n    \"postcss-html-transform\": \"4.3.2\",\n    \"postcss-plugin-constparse\": \"4.3.2\",\n    \"postcss-pxtransform\": \"4.3.2\",\n    \"@tarojs/runner-utils\": \"4.3.2\",\n    \"@tarojs/shared\": \"4.3.2\"\n  },\n  \"devDependencies\": {\n    \"@babel/types\": \"^7.24.0\",\n    \"@types/babel__core\": \"^7.20.5\",\n    \"@types/sax\": \"^1.2.4\",\n    \"less\": \"^4.2.0\",\n    \"rollup\": \"^3.29.4\",\n    \"sass\": \"1.44.0\",\n    \"stylus\": \"^0.63.0\",\n    \"terser\": \"^5.30.4\",\n    \"vite\": \"^4.2.0\",\n    \"@tarojs/taro\": \"4.3.2\"\n  },\n  \"peerDependencies\": {\n    \"postcss\": \"^8\",\n    \"vite\": \"^4\",\n    \"@tarojs/runtime\": \"4.3.2\"\n  },\n  \"scripts\": {\n    \"prod\": \"pnpm run build\",\n    \"dev\": \"pnpm run mv:comp && tsc -w\",\n    \"build\": \"tsc && pnpm run mv:comp\",\n    \"mv:comp\": \"node ./mv-comp.js\",\n    \"test\": \"vitest run\",\n    \"test:ci\": \"vitest run --coverage\"\n  }\n}",
+      "after": "{\n  \"name\": \"@tarojs/vite-runner\",\n  \"version\": \"4.3.2-dsa.1\",\n  \"main\": \"index.js\",\n  \"license\": \"MIT\",\n  \"files\": [\n    \"index.js\",\n    \"dist\",\n    \"MAINTENANCE.md\",\n    \"PATCH-MANIFEST.json\",\n    \"PATCHES.json\",\n    \"REBUILD.py\",\n    \"maintenance.patch\",\n    \"tests\"\n  ],\n  \"dependencies\": {\n    \"@ampproject/remapping\": \"^2.3.0\",\n    \"@babel/core\": \"^7.24.4\",\n    \"@rollup/plugin-babel\": \"^6.0.4\",\n    \"@rollup/plugin-inject\": \"^5.0.5\",\n    \"@rollup/plugin-terser\": \"^0.4.4\",\n    \"@rollup/pluginutils\": \"^5.1.0\",\n    \"@tarojs/parse-css-to-stylesheet\": \"^0.0.69\",\n    \"@vitejs/plugin-legacy\": \"6.1.1\",\n    \"acorn-walk\": \"^8.3.2\",\n    \"autoprefixer\": \"^10.4.19\",\n    \"connect-history-api-fallback\": \"^2.0.0\",\n    \"fast-glob\": \"^3.3.2\",\n    \"json5\": \"^2.2.3\",\n    \"lodash\": \"^4.17.21\",\n    \"magic-string\": \"^0.30.10\",\n    \"mrmime\": \"^2.0.0\",\n    \"picomatch\": \"^4.0.2\",\n    \"postcss-css-variables\": \"^0.19.0\",\n    \"postcss-import\": \"^16.1.0\",\n    \"postcss-load-config\": \"^5.0.3\",\n    \"postcss-modules\": \"^6.0.0\",\n    \"regenerator-runtime\": \"0.11\",\n    \"sax\": \"1.2.4\",\n    \"stylelint\": \"^16.4.0\",\n    \"vite-plugin-static-copy\": \"2.3.2\",\n    \"@tarojs/helper\": \"4.3.2\",\n    \"@tarojs/runtime\": \"4.3.2\",\n    \"babel-plugin-transform-taroapi\": \"4.3.2\",\n    \"postcss-html-transform\": \"4.3.2\",\n    \"postcss-plugin-constparse\": \"4.3.2\",\n    \"postcss-pxtransform\": \"4.3.2\",\n    \"@tarojs/runner-utils\": \"4.3.2\",\n    \"@tarojs/shared\": \"4.3.2\",\n    \"html-minifier-terser\": \"7.2.0\"\n  },\n  \"devDependencies\": {\n    \"@babel/types\": \"^7.24.0\",\n    \"@types/babel__core\": \"^7.20.5\",\n    \"@types/sax\": \"^1.2.4\",\n    \"less\": \"^4.2.0\",\n    \"rollup\": \"^4.34.9\",\n    \"sass\": \"1.44.0\",\n    \"stylus\": \"^0.63.0\",\n    \"terser\": \"^5.30.4\",\n    \"vite\": \"6.4.5\",\n    \"@tarojs/taro\": \"4.3.2\"\n  },\n  \"peerDependencies\": {\n    \"postcss\": \"^8\",\n    \"vite\": \"6.4.5\",\n    \"@tarojs/runtime\": \"4.3.2\"\n  },\n  \"scripts\": {\n    \"prod\": \"pnpm run build\",\n    \"dev\": \"pnpm run mv:comp && tsc -w\",\n    \"build\": \"tsc && pnpm run mv:comp\",\n    \"mv:comp\": \"node ./mv-comp.js\",\n    \"test\": \"vitest run\",\n    \"test:ci\": \"vitest run --coverage\"\n  },\n  \"private\": true,\n  \"description\": \"Project-maintained Taro 4.3.2 Vite 6 compatibility fork; not an upstream release.\"\n}\n",
+      "count": 1
+    }
+  ],
+  "removed": [
+    {
+      "path": "dist/index.h5.js.map",
+      "sha256": "f6c511ee142b53b7a531f7a3d81b90b3ab3b68f3d86630bf4462e7d493385239",
+      "reason": "Stale mapping after distribution-source patch; original mapping is retained in verified upstream tarball."
+    },
+    {
+      "path": "dist/index.mini.js.map",
+      "sha256": "22b921a467de7436cc4d91569989325af0f31a75a2424425c8f05e1fbebc9b8c",
+      "reason": "Stale mapping after distribution-source patch; original mapping is retained in verified upstream tarball."
+    },
+    {
+      "path": "dist/index.harmony.js.map",
+      "sha256": "6faa6dd85a34f9939f9eb532d412fd64825e3e7894e55d046b8be3e9d9d720cf",
+      "reason": "Stale mapping after distribution-source patch; original mapping is retained in verified upstream tarball."
+    },
+    {
+      "path": "dist/h5/config.js.map",
+      "sha256": "ffc7b61250b86e3ff6fc08b26c2dbe3729b633d9c4d1c1a054fea2762822dc48",
+      "reason": "Stale mapping after distribution-source patch; original mapping is retained in verified upstream tarball."
+    },
+    {
+      "path": "dist/h5/mpa.js.map",
+      "sha256": "ca6cff1772eb068110a05cc8f41c8b7bd00efaba01ddaed67ff22eb9ccc1a5ae",
+      "reason": "Stale mapping after distribution-source patch; original mapping is retained in verified upstream tarball."
+    },
+    {
+      "path": "dist/mini/config.js.map",
+      "sha256": "3ce1ff1c5805d60f8a33e12dc8c2f02dddc1ee7ea7cd01336770ea4d0301c5cd",
+      "reason": "Stale mapping after distribution-source patch; original mapping is retained in verified upstream tarball."
+    },
+    {
+      "path": "dist/mini/emit.js.map",
+      "sha256": "3f5b7a19fb55260081d34a7942ef748bf78eee4dd5ba0c2294dc6a808fbbe4e3",
+      "reason": "Stale mapping after distribution-source patch; original mapping is retained in verified upstream tarball."
+    }
+  ]
+}

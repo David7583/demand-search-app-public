@@ -1,0 +1,2172 @@
+{
+  "format": "demand-search-public-source/1",
+  "visibility": "public",
+  "application_license": "AGPL-3.0-only",
+  "documentation_license": "CC-BY-4.0",
+  "synthetic_catalog_license": "CC-BY-4.0",
+  "purpose": "Public experimental source copy; not hosted service deployment",
+  "source_commit": "20d5eec8e119ea0a0b6e6aa6dfffec953ae48096",
+  "source_history_included": false,
+  "files": [
+    {
+      "path": ".env.example",
+      "bytes": 216,
+      "sha256": "6b53c87ac49dc91db00a8236b843cb88d3013bdf4ab6ef4c26783e461af39a80"
+    },
+    {
+      "path": ".gitattributes",
+      "bytes": 248,
+      "sha256": "2807c34fdf91ebc892c23948e007a8b73b08ec2900b391dab0efad9d0ec79c71"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "bytes": 1494,
+      "sha256": "2ae3a01b24888c032a3d517fdf69ecc6ee91df8b328ea6d34d94d100c8de1306"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 591,
+      "sha256": "b4f3b970255837d9f4446205efcce2d068d3eb8185f17e6c8a023e9e3d157a2a"
+    },
+    {
+      "path": ".node-version",
+      "bytes": 8,
+      "sha256": "55075b5ec4e8b31936cbbc282b8829116d1fd48f2f2f1856dee592a6650700ce"
+    },
+    {
+      "path": ".python-version",
+      "bytes": 7,
+      "sha256": "5327a40401de3c82bbc3c066c9f8272fd6ce56b99825b5e76fea5b7463729d55"
+    },
+    {
+      "path": "apps/client/.npmrc",
+      "bytes": 97,
+      "sha256": "87954d7942cb3ff8976de848fd28eab5416af056d30c96feb526c0c1294cda79"
+    },
+    {
+      "path": "apps/client/config/index.ts",
+      "bytes": 796,
+      "sha256": "52fee7d1daf3ae3be36b92abc7a8d3941115c3de7a48bb34c91837cadc99761b"
+    },
+    {
+      "path": "apps/client/docs/DEPENDENCY-LICENSES.json",
+      "bytes": 243236,
+      "sha256": "6cc7dd0e4f53999a2f11650c525484b93e484700913db65e1545753b3222fb08"
+    },
+    {
+      "path": "apps/client/eslint.config.js",
+      "bytes": 241,
+      "sha256": "b033d5c4b02489e5b90946d07a2e7d64a7304b206317a7ffa9721b78df55abb0"
+    },
+    {
+      "path": "apps/client/package-lock.json",
+      "bytes": 336629,
+      "sha256": "3a2b5b973ea7ead6aca04aa1c6808157c06a288712b5f9b4a948623de5f03f38"
+    },
+    {
+      "path": "apps/client/package.json",
+      "bytes": 1783,
+      "sha256": "e133051dc701c5fa4169d32acee910bad13afe384e28eb1782570c5e232c9ded"
+    },
+    {
+      "path": "apps/client/playwright.config.ts",
+      "bytes": 1261,
+      "sha256": "24899bcf37bf6530cf9bd6aa27f90f8cba7c9db6511cc032942c87dbb362e563"
+    },
+    {
+      "path": "apps/client/playwright.market.config.ts",
+      "bytes": 756,
+      "sha256": "0702cb9029a0be985217d0fd6a26d7f4ed2452a0791a661e2dc19612b70be9c9"
+    },
+    {
+      "path": "apps/client/project.config.json",
+      "bytes": 286,
+      "sha256": "ef28581957af0bc9dd13ba3869b985c2afdc0e1988b2fed0d6cbc2760ae6700d"
+    },
+    {
+      "path": "apps/client/README.md",
+      "bytes": 1849,
+      "sha256": "81391546bdc05b88de625c4377647d453098cc8e143294e61bb1ea073268ee24"
+    },
+    {
+      "path": "apps/client/scripts/build.mjs",
+      "bytes": 2351,
+      "sha256": "23687b5b8625d12266f53c75bda3bb32f8312aad66a5fba8232d657eb92b6973"
+    },
+    {
+      "path": "apps/client/scripts/controlled-build-plugin.cjs",
+      "bytes": 3070,
+      "sha256": "217394638873456cd0e0af5f93b71d13872635c8aa5e0b2ccb3a0961e91a3f8d"
+    },
+    {
+      "path": "apps/client/src/api.ts",
+      "bytes": 8460,
+      "sha256": "b3fc9b0b0e1c2d6e448bd002eb6ebe3ed999bbda6511d1b165d744c3bd99bb5f"
+    },
+    {
+      "path": "apps/client/src/app.config.ts",
+      "bytes": 226,
+      "sha256": "7efdaf242841e36ec7cc56a4dc59e43d2d4ad2fe9e9697d95ac5768e9787f0df"
+    },
+    {
+      "path": "apps/client/src/app.css",
+      "bytes": 26674,
+      "sha256": "418f4990156a10b332dffee45d122dbdead8d6fdefe2a21d0e7909e3333f2002"
+    },
+    {
+      "path": "apps/client/src/app.tsx",
+      "bytes": 147,
+      "sha256": "6dad4cb6700351c257fc90433a75ac395d48b68caedb620c4bdfe712029ab444"
+    },
+    {
+      "path": "apps/client/src/components/AppTextarea.tsx",
+      "bytes": 1210,
+      "sha256": "0cc2ab2aae9020fddae953eb3d1006ee99f5434ce4b0dd02dd1fa3a12e523e00"
+    },
+    {
+      "path": "apps/client/src/components/DemandPanel.tsx",
+      "bytes": 30752,
+      "sha256": "c58949c4a4f37d99165784b1dbe39879e1ac9401ab1c0885d7887f2c508f7702"
+    },
+    {
+      "path": "apps/client/src/components/ModelSettings.tsx",
+      "bytes": 13022,
+      "sha256": "c673148973930fb70c4ae00845b1d98c0201696d2fae835962c6e9d52eabb1cf"
+    },
+    {
+      "path": "apps/client/src/components/SearchSources.tsx",
+      "bytes": 8089,
+      "sha256": "00accfe98799f7711530ee4466187b8b726991b6b5ffbad265692dbe8b166932"
+    },
+    {
+      "path": "apps/client/src/components/ShoppingListEditor.tsx",
+      "bytes": 8034,
+      "sha256": "a9b6c8feb16aeb19de4e1b56e16cf1ca562c9641b32d5200da5d7b6a399fe4bf"
+    },
+    {
+      "path": "apps/client/src/components/SimulatedMarket.tsx",
+      "bytes": 13668,
+      "sha256": "54f004ae31c88781a818461cf460a5b48b05fd47c0a5a14d6f09ff883a90025f"
+    },
+    {
+      "path": "apps/client/src/components/SolutionWorkspace.tsx",
+      "bytes": 4159,
+      "sha256": "c9d55a7de9e4caccb43e9d08fc170721ea0665ae7d398021b5835d708eebcb96"
+    },
+    {
+      "path": "apps/client/src/continuous.ts",
+      "bytes": 558,
+      "sha256": "422cc9495b8fc604e1e5cf9629932571a52ead980002ccaf1d15909642b287ce"
+    },
+    {
+      "path": "apps/client/src/demand.ts",
+      "bytes": 3142,
+      "sha256": "c4b2dfdb202d1d2604600eda9f361a6185188fcf0ef15307a24f2af526982049"
+    },
+    {
+      "path": "apps/client/src/external-links.ts",
+      "bytes": 2147,
+      "sha256": "1a4ad47e01a890b22631d7f30c1c5e4611a7f3d87204f21b69e71b2da835eddf"
+    },
+    {
+      "path": "apps/client/src/i18n-core.ts",
+      "bytes": 9261,
+      "sha256": "8ca8bb2f3124861956c3880bb18a9fea7b21ba29bf3d03589fb7a4e2cb10338e"
+    },
+    {
+      "path": "apps/client/src/i18n.tsx",
+      "bytes": 2338,
+      "sha256": "5f733de66f006b089774d5383d2085a5e9a7d378942bb42dc73453fc0cc59753"
+    },
+    {
+      "path": "apps/client/src/index.html",
+      "bytes": 283,
+      "sha256": "4dd0b8ec15820b5df506c9bf2deb05026f9a794b0e4dd67ca68fab255557fceb"
+    },
+    {
+      "path": "apps/client/src/pages/chat/index.config.ts",
+      "bytes": 79,
+      "sha256": "9c6809aa434a58fbb6c21845df8f9e9c0a50ad89f6e8fac41634eb25f6d252ca"
+    },
+    {
+      "path": "apps/client/src/pages/chat/index.tsx",
+      "bytes": 29977,
+      "sha256": "b158090af61f1b49f92560bfc37db17aac8550d4ff5e395c663334a1baa182c2"
+    },
+    {
+      "path": "apps/client/src/request-id-core.ts",
+      "bytes": 1611,
+      "sha256": "72152281c77c5cdc8b4b4f4d8b6ef87870f91c6f2066068a68804454922f6b9c"
+    },
+    {
+      "path": "apps/client/src/request-id.ts",
+      "bytes": 1109,
+      "sha256": "704e1adae3aa4557fb98e88a6981949e0d00313beffc44ac35ec775061cbd8ff"
+    },
+    {
+      "path": "apps/client/src/state.ts",
+      "bytes": 1051,
+      "sha256": "02c3a1e3f67d3f4eb69c6f3aba6217154fc2ffbc6508a17cb214e802da0795d9"
+    },
+    {
+      "path": "apps/client/src/streaming.ts",
+      "bytes": 2001,
+      "sha256": "3f6faff32ef4a007a2fddd7e73be679105de1fd7e343da408cc8c5e02b1d2493"
+    },
+    {
+      "path": "apps/client/src/translations.ts",
+      "bytes": 38154,
+      "sha256": "3e5e2432547a056ffa74ed9000c5201cc9f794c6579fdb1c7e3381c54b568c68"
+    },
+    {
+      "path": "apps/client/tests/browser/bilingual-overseas.spec.ts",
+      "bytes": 11911,
+      "sha256": "d77fe9ea568c4e3d3c9435e868621642d71189fae63785b9c23f1478fea8ce21"
+    },
+    {
+      "path": "apps/client/tests/browser/collaboration-navigation.spec.ts",
+      "bytes": 8876,
+      "sha256": "d3d0fc6540852ae20503b6667789866689f36d063522df0879f6d2290f8b1728"
+    },
+    {
+      "path": "apps/client/tests/browser/collaboration-reference.spec.ts",
+      "bytes": 10796,
+      "sha256": "8d443aea3dea2f25891c6daa0b90ec4e5c10fd9e9c370525c8c58d383bedf5ce"
+    },
+    {
+      "path": "apps/client/tests/browser/collaboration.spec.ts",
+      "bytes": 12353,
+      "sha256": "6b33330ca341d3816d8ad59ec3293db078f6b920d53b26f850dcfd034588a7c5"
+    },
+    {
+      "path": "apps/client/tests/browser/composer.spec.ts",
+      "bytes": 3751,
+      "sha256": "932047c7adf964801d85e903d21390934a9ea51a04ba0b9b559bb281cb8d0c5e"
+    },
+    {
+      "path": "apps/client/tests/browser/multi-items.spec.ts",
+      "bytes": 15162,
+      "sha256": "870b9f3ba1eaaa58b8b1a942ce275de928ae98f8d6caef751f0912064300d8cd"
+    },
+    {
+      "path": "apps/client/tests/browser/s2-demands.spec.ts",
+      "bytes": 8987,
+      "sha256": "9cb564b5b45547061d37e6f3fa25879ca21f10215e71eeebb4ac68e609fc922b"
+    },
+    {
+      "path": "apps/client/tests/browser/save-retry.spec.ts",
+      "bytes": 2867,
+      "sha256": "ed92ced4fd60a1e8e8cb142c8773fd1c193aa0c5b23440522d1d4ce4cf177849"
+    },
+    {
+      "path": "apps/client/tests/browser/session-recovery.spec.ts",
+      "bytes": 5360,
+      "sha256": "1a791a13caf7017df4d6101773fb19aaaef5d0caf8042b66a465b00ebd773efb"
+    },
+    {
+      "path": "apps/client/tests/browser/shell.spec.ts",
+      "bytes": 10016,
+      "sha256": "12c49cc1bc941fa06c080236e02d3a18662e63bff8bbb5e37e741c0179b1a802"
+    },
+    {
+      "path": "apps/client/tests/browser/simulated-market.spec.ts",
+      "bytes": 10105,
+      "sha256": "07cd4ad2b68536e9f47b8b9f759b1b7206d10817228d50e13c718a8e6c7aba86"
+    },
+    {
+      "path": "apps/client/tests/build-security.test.mjs",
+      "bytes": 8296,
+      "sha256": "6aafc5e1d17a568ceef55704cc7887673265cf7e89b43b3204fa920038b9add6"
+    },
+    {
+      "path": "apps/client/tests/continuous.test.mjs",
+      "bytes": 1213,
+      "sha256": "3f2c6aa2f9d31aa4a91c1a2dd3cf7be216efd48608eb12193dd6e652d70b9b74"
+    },
+    {
+      "path": "apps/client/tests/external-links.test.mjs",
+      "bytes": 3347,
+      "sha256": "f6f9b8c668e310457a006906fe5e82a6cd8c1159ee7c0dd613d105b6ccecbaaa"
+    },
+    {
+      "path": "apps/client/tests/globs-compat.test.mjs",
+      "bytes": 10418,
+      "sha256": "e2a8bcb93478cf0ce440bda187af109a6d5594c558daecd3f1023a1e304e7b6e"
+    },
+    {
+      "path": "apps/client/tests/helpers/globs-security.mjs",
+      "bytes": 2404,
+      "sha256": "093423cb7f9323b29e64d27c4669d988c450cb30e4592cee4ec46dd93a779097"
+    },
+    {
+      "path": "apps/client/tests/i18n.test.mjs",
+      "bytes": 2508,
+      "sha256": "7ffcebc61cd4911bc7cc5079e71630e5266b2c5683f3b5735c18f62b7f20af55"
+    },
+    {
+      "path": "apps/client/tests/request-id.test.mjs",
+      "bytes": 2361,
+      "sha256": "22e46dca5ae7346bc87de0bc0212d8ccef1e11944b51e0b4fcadf8f92074ef46"
+    },
+    {
+      "path": "apps/client/tests/state.test.mjs",
+      "bytes": 2195,
+      "sha256": "97bf7c2b2a3ae7ea8e4a24c2a8afe59c1cb82304a21f110887ce43eb0bb4a006"
+    },
+    {
+      "path": "apps/client/tests/streaming.test.mjs",
+      "bytes": 3104,
+      "sha256": "7324a7223876b89c0c1db650e17ca5cb6a9cd70950b03bef1c41a8a49d92d912"
+    },
+    {
+      "path": "apps/client/tooling/globs/globs-0.1.4-to-dsa.1.patch",
+      "bytes": 9144,
+      "sha256": "0ceb6391f3df93b9ea31a2b642dab1d043f349d1980df3459c140bf964bbe3c2"
+    },
+    {
+      "path": "apps/client/tooling/globs/index.d.ts",
+      "bytes": 701,
+      "sha256": "b657879cc49706c0d0008ba28fb020b8e247ab520729a9e0c510869d2ba4ebdd"
+    },
+    {
+      "path": "apps/client/tooling/globs/index.js",
+      "bytes": 3812,
+      "sha256": "45c43e372c8a2001b5b896014ce6080805d49faa1e3958d41ccb06b696e155b6"
+    },
+    {
+      "path": "apps/client/tooling/globs/LICENSE",
+      "bytes": 1133,
+      "sha256": "b4eb590bb57c1f4fb1ef9df84af55e5ce689601994a8b2fd3a61fecff75f1b98"
+    },
+    {
+      "path": "apps/client/tooling/globs/package.json",
+      "bytes": 661,
+      "sha256": "fcef67602c74e7ea6fde5d66c867d35f33573921cd158178d547d99a317d3bd9"
+    },
+    {
+      "path": "apps/client/tooling/globs/README-FORK.md",
+      "bytes": 2972,
+      "sha256": "99e1e10ae3df02cfc9ffac0a8abeae65ddd0a6ea325c45a716c1041ab18ffbff"
+    },
+    {
+      "path": "apps/client/tooling/globs/Readme.md",
+      "bytes": 1740,
+      "sha256": "e43a709f7e487baef9ea4b08e9a8dd6d083dcc2a0621b737d3b6b7a8a2522e53"
+    },
+    {
+      "path": "apps/client/tooling/globs/UPSTREAM.json",
+      "bytes": 2400,
+      "sha256": "03337fc56f0853fe4e502f7972d2453772cbe6b56f04480c4457a2ca1f892ebf"
+    },
+    {
+      "path": "apps/client/tooling/taro-plugin-framework-react/dist/api-loader.js",
+      "bytes": 1863,
+      "sha256": "f1a68dc93ff44c8294d2f8addacaf16ebc816e76e2fbb7185b28d4a458405b7e"
+    },
+    {
+      "path": "apps/client/tooling/taro-plugin-framework-react/dist/api-loader.js.map",
+      "bytes": 2136,
+      "sha256": "4377994bcada54930f82eaeeebb1c0e81419aec1616c328b96d13ba40dfd0915"
+    },
+    {
+      "path": "apps/client/tooling/taro-plugin-framework-react/dist/index.js",
+      "bytes": 29478,
+      "sha256": "cf76c3289bcfa403d739cd22f9a36e0474d966b26654ed6188409299cc7467c7"
+    },
+    {
+      "path": "apps/client/tooling/taro-plugin-framework-react/dist/index.js.map",
+      "bytes": 48446,
+      "sha256": "aec017dade5bf9f1bf96609e4b592e6bdf8266d2643335fe58d4e7a2b11274ee"
+    },
+    {
+      "path": "apps/client/tooling/taro-plugin-framework-react/dist/runtime.js",
+      "bytes": 42056,
+      "sha256": "49c8f709b5699a5d69d5f353f2dd82a14fd0eff602429efecb985f9485210a77"
+    },
+    {
+      "path": "apps/client/tooling/taro-plugin-framework-react/dist/runtime.js.map",
+      "bytes": 69772,
+      "sha256": "6fd094ea6ed40b83e9300637b9769ebf1f457f7581ee4891812797c3b65493d0"
+    },
+    {
+      "path": "apps/client/tooling/taro-plugin-framework-react/index.js",
+      "bytes": 93,
+      "sha256": "a801ab6700bc7bff747dbf91f49f759ed186a79ec630ff70866ffaa5e2794e2e"
+    },
+    {
+      "path": "apps/client/tooling/taro-plugin-framework-react/LICENSE",
+      "bytes": 6914,
+      "sha256": "984f2dd0f1ef09cefdd374bf43b80f63e6fb70fe9d6247e7ab1379277d6bdc6a"
+    },
+    {
+      "path": "apps/client/tooling/taro-plugin-framework-react/MAINTENANCE.md",
+      "bytes": 1224,
+      "sha256": "9c41f131b64c6b9a20e385066c7844c20e22c1bc8d795ae50c7d82f84da7bc05"
+    },
+    {
+      "path": "apps/client/tooling/taro-plugin-framework-react/maintenance.patch",
+      "bytes": 1317,
+      "sha256": "4000af42b2c803bdadc640c5aa1f5770f54748e6a94a9edcc007d7df44151d01"
+    },
+    {
+      "path": "apps/client/tooling/taro-plugin-framework-react/package.json",
+      "bytes": 2446,
+      "sha256": "609dbc01d6637a647c8c20842cbca8e75a20125bed1482a6c20cd08e61b1bb97"
+    },
+    {
+      "path": "apps/client/tooling/taro-plugin-framework-react/PATCH-MANIFEST.json",
+      "bytes": 971,
+      "sha256": "ec4a53eb9db76c0ff5a0c95e82c0079b6bcc1ddcc896615853436930a1bd3389"
+    },
+    {
+      "path": "apps/client/tooling/taro-plugin-framework-react/PATCHES.json",
+      "bytes": 5731,
+      "sha256": "d4622ab63786024af186841060c9aff288cbdbe931e7464dcd04421d11fd558c"
+    },
+    {
+      "path": "apps/client/tooling/taro-plugin-framework-react/README.md",
+      "bytes": 89,
+      "sha256": "c4e5e7a3832bb05ddb32e442d33e08375d5dd4f77d4802fbc57be6abaab3051a"
+    },
+    {
+      "path": "apps/client/tooling/taro-plugin-framework-react/REBUILD.py",
+      "bytes": 4395,
+      "sha256": "df14ea97c09c2f250cf0617d1c245815ee95372ba1138899c2ab25d3cc17f05e"
+    },
+    {
+      "path": "apps/client/tooling/taro-plugin-framework-react/UPSTREAM-MAINTENANCE.json",
+      "bytes": 1812,
+      "sha256": "7930469aa594d141b65ed20d22d6775b3ab7ecc11ade5fd105d4a2226742a20f"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/common/babel-plugin-import-native-component.d.ts",
+      "bytes": 473,
+      "sha256": "2047e0f9ad29c23ede9b038e4e70a4a8c82ea6942b44e8a7205e6f46779622f5"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/common/babel-plugin-import-native-component.js",
+      "bytes": 3031,
+      "sha256": "53352b459175e26d9981fa08b17263f4ef3f8dc265cc99abfabfc59fa2d9e6c8"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/common/babel-plugin-import-native-component.js.map",
+      "bytes": 2480,
+      "sha256": "409ddeb19133ed96665adc696bdf2c09583f979c92559303aceae9d76c0e705c"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/common/babel-plugin-remove-config.d.ts",
+      "bytes": 185,
+      "sha256": "1a66754baa49566694a7310207e8b5ef401b8e061c6b6810d5e081c576e70c75"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/common/babel-plugin-remove-config.js",
+      "bytes": 842,
+      "sha256": "ce1a956e32bc8aa0bc16954b7d63bca78978e48d4370e443e33158af82051a6f"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/common/babel-plugin-remove-config.js.map",
+      "bytes": 732,
+      "sha256": "ac8a3906a4112d46867ca1440c38a75fd6827d88a894efa38cc47e97cffedff8"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/common/rollup-plugin-increment.d.ts",
+      "bytes": 312,
+      "sha256": "658aa07d6d7a98e678fdd2ea35f1de8b47d39c2caa9c1b08528ac18bdb3b2e50"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/common/rollup-plugin-increment.js",
+      "bytes": 2010,
+      "sha256": "f735b9313473fa58d7a19c13bafdebb3b08de55e11f4ddfe4b2ce2a853596a5e"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/common/rollup-plugin-increment.js.map",
+      "bytes": 1928,
+      "sha256": "c3470f3063c06e16c0f5c7d462fb67754db0abcaf000d69986c7e43640e597b4"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/common/vite-plugin-assets.d.ts",
+      "bytes": 270,
+      "sha256": "f5f705cb76e4fa6dfce9548bed04f895bfd20d0c76e474b209dda24ab19a33e3"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/common/vite-plugin-assets.js",
+      "bytes": 4447,
+      "sha256": "1b2dc19dcb0b2d08be4ed69e9d9e850f22491a5901b184d1e10f542ec5a6aa4f"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/common/vite-plugin-assets.js.map",
+      "bytes": 2926,
+      "sha256": "ce310f724e56c3e7ce4889031bb9f7feebcd105d8e73fa11dcb06e53eb970eda"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/common/vite-plugin-multi-platform.d.ts",
+      "bytes": 316,
+      "sha256": "352c85388286d19169582383fed775b93a3d6cc11e8771e1eb7e35c87e424646"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/common/vite-plugin-multi-platform.js",
+      "bytes": 4994,
+      "sha256": "088c1f942d5483a3053922e9b7c2cbf85486290adf2fd26108120b9f05166ab1"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/common/vite-plugin-multi-platform.js.map",
+      "bytes": 2739,
+      "sha256": "9510bffb524fe3956c491bec9bf26d0c1d7df6ad91dc1064341c84ef3cb035d4"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/defaultConfig/defaultConfig.h5.d.ts",
+      "bytes": 176,
+      "sha256": "f9c680195c52d12947356ee5759503d4c5644683e7d5d34262342d46be530936"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/defaultConfig/defaultConfig.h5.js",
+      "bytes": 1190,
+      "sha256": "779656f39df051467df6b1285539a05a2b96bccb54dc84bf745a0d1600f6d57e"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/defaultConfig/defaultConfig.h5.js.map",
+      "bytes": 829,
+      "sha256": "7e441e0e651f6db92a7eab7c2f51d1f7ccaa15e34e5a4ff7b649d6364c006843"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/defaultConfig/defaultConfig.harmony.d.ts",
+      "bytes": 181,
+      "sha256": "a067a428ede6c089ca8b11bc88c992be36fbfb6b560315ed23a02e2dba20a694"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/defaultConfig/defaultConfig.harmony.js",
+      "bytes": 1125,
+      "sha256": "5e0b54447970f395cb9fca034ac6a2a2fc9da7b3f2f000385381b242d3396777"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/defaultConfig/defaultConfig.harmony.js.map",
+      "bytes": 815,
+      "sha256": "424db6927cc385335698ba46ef1b0e408be5721f272c0b78505259b70e4c049e"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/defaultConfig/defaultConfig.mini.d.ts",
+      "bytes": 180,
+      "sha256": "53fa72e08ca12c932135fe291c4ed63d32b00bab86d607db17a4fac67864b5e1"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/defaultConfig/defaultConfig.mini.js",
+      "bytes": 1154,
+      "sha256": "7c83c26611f41cc2efec40b2e5f09713c6afb863e66d8bff26772b26a25c8546"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/defaultConfig/defaultConfig.mini.js.map",
+      "bytes": 829,
+      "sha256": "91fc062159221b034f39e5a6154e588a6fd02a5528f163bb2552c454c99aaecb"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/h5/config.d.ts",
+      "bytes": 219,
+      "sha256": "a58eb3331c63632a900d22aa42cb3445ac23e1840787dcdce8dcc5c72e5c0f2b"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/h5/config.js",
+      "bytes": 12575,
+      "sha256": "c316410d8afc672305d677259fcc40db8e92673f0b8961b7e40c313acafb704e"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/h5/entry.d.ts",
+      "bytes": 219,
+      "sha256": "a58eb3331c63632a900d22aa42cb3445ac23e1840787dcdce8dcc5c72e5c0f2b"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/h5/entry.js",
+      "bytes": 10223,
+      "sha256": "bad29d5ee150ef587dbbf71dbd41f925528fa2eb9667aa2b79aae00dcae39a4e"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/h5/entry.js.map",
+      "bytes": 6085,
+      "sha256": "51a9be29c30f6bd5c97da601e06c9490e5ca4c0113bd1a250076740b1bdc3acf"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/h5/index.d.ts",
+      "bytes": 221,
+      "sha256": "76707dee5ec3c7b7f4400836b8dd8b5271059d769fbcd09000d4cc0c25868fe1"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/h5/index.js",
+      "bytes": 1574,
+      "sha256": "8ed3b85beb0bed2298cb9979e4bbbd778493719675f483a47b01ee0a4cded3fa"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/h5/index.js.map",
+      "bytes": 817,
+      "sha256": "b4706baf6913c808cb6a0cb2f9fe39738bb0b4f045b086f7f9231c5f817c23bc"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/h5/mpa.d.ts",
+      "bytes": 219,
+      "sha256": "a58eb3331c63632a900d22aa42cb3445ac23e1840787dcdce8dcc5c72e5c0f2b"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/h5/mpa.js",
+      "bytes": 8434,
+      "sha256": "1d39c84d29d559fcefedb4761db844ef61db19082b6c7f1d487992ee06e8b4e7"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/h5/pipeline.d.ts",
+      "bytes": 219,
+      "sha256": "a58eb3331c63632a900d22aa42cb3445ac23e1840787dcdce8dcc5c72e5c0f2b"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/h5/pipeline.js",
+      "bytes": 2366,
+      "sha256": "704fd4bd61773cc0cdfb9b9fa286f01a2dff26fbd88214609fd49b13affb336c"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/h5/pipeline.js.map",
+      "bytes": 1065,
+      "sha256": "4f8c583becf93cba28384f22cef477af1a629cd9c640b669e0015ff66f30a134"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/h5/router.d.ts",
+      "bytes": 219,
+      "sha256": "a58eb3331c63632a900d22aa42cb3445ac23e1840787dcdce8dcc5c72e5c0f2b"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/h5/router.js",
+      "bytes": 955,
+      "sha256": "0df492ce220de2ad6a2d916ee881efea6cc81d359835cd08baa8cf86dc6f3593"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/h5/router.js.map",
+      "bytes": 734,
+      "sha256": "e466f45d608aebaa6960585ef20917802d433054055feea51f8a8cb0c45b2c02"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/asset.d.ts",
+      "bytes": 4046,
+      "sha256": "985b19879b53832ea781308852a929d1897d9e4e21572f23927feb5b452c9a10"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/asset.js",
+      "bytes": 10309,
+      "sha256": "4542b1452ee7cd44b455a94eab4a46984081bf290d1383076ff2fc153d8df107"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/asset.js.map",
+      "bytes": 6981,
+      "sha256": "f14f010df915bdb833d1305213db33dd75f10968613f6d2c4dca97248bbe2be0"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/babel.d.ts",
+      "bytes": 256,
+      "sha256": "d0d87d02ded97f75e14d994578e5f45adb36eb96e6e31410fee6a678b70340c5"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/babel.js",
+      "bytes": 5859,
+      "sha256": "bc1ed7e2b2c29749320fc95f60202493b16a17953cb756bfaf9ef9a2d2420264"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/babel.js.map",
+      "bytes": 2882,
+      "sha256": "059e9ff4c0f410e8bd862110756c542aa78451d675cae0858bcfda44235f93ce"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/compile.d.ts",
+      "bytes": 249,
+      "sha256": "c3444afb27cadf33d453c6347ffbfa15dc498787de2361facea549c0aa8fec3b"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/compile.js",
+      "bytes": 7226,
+      "sha256": "1b66b7e96757ac77df112b40da3f359e3e46c0c40c2da3b16ace3f936bb92c0b"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/compile.js.map",
+      "bytes": 4389,
+      "sha256": "3d1d5bbb38b81607d2223a97abb8642aa0b103b7edce21031c5dd3d9f4a0be51"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/config.d.ts",
+      "bytes": 229,
+      "sha256": "5d6be8a0704ca1f81b7dd3ce45d00b1de166d35b74dc1c8eb5d2f086e6a9027f"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/config.js",
+      "bytes": 16868,
+      "sha256": "c9e51bb16f9b54d3b4726f68d5938903269ccff8e6e58cf690b650c963ae1135"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/config.js.map",
+      "bytes": 11275,
+      "sha256": "8341aa3c7591695913a38389a2137005c9db2213ab29b3140d324b893ad8d8df"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/emit.d.ts",
+      "bytes": 229,
+      "sha256": "5d6be8a0704ca1f81b7dd3ce45d00b1de166d35b74dc1c8eb5d2f086e6a9027f"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/emit.js",
+      "bytes": 8762,
+      "sha256": "6089cd5aabdcf73e0835fb1249cb2d36e67969b470faeb512ac03a82bace25c3"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/emit.js.map",
+      "bytes": 5184,
+      "sha256": "721b2aed9ee79d47e1b62166dc18ad06ab978f7b71b08794140c522681a88ff7"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/entry.d.ts",
+      "bytes": 341,
+      "sha256": "58c5e5a39f77edd1798d4e204e858a313bc94bf88435b36489dab7a03703d475"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/entry.js",
+      "bytes": 8368,
+      "sha256": "7f05e54b3b0dcf26a47cf1785bc05e5c8809623fd6db9f09db55629023dfb026"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/entry.js.map",
+      "bytes": 4842,
+      "sha256": "3d5184e4e70f88cec52f7ab358bca896002235a081cfcbe07a2d379743eb7030"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/ets.d.ts",
+      "bytes": 285,
+      "sha256": "5677fa3bda419716a8cc0e22a78cb07671a06ee97331facb5217e06434919433"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/ets.js",
+      "bytes": 6851,
+      "sha256": "bdd1acf036e979823952c745fa2ff773c57c2a7986adf153879adad0985dc295"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/ets.js.map",
+      "bytes": 4220,
+      "sha256": "73aa1df93a79c6dee2bac9c11e370835a3ca6da40ae97e8dad47b94df060a851"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/index.d.ts",
+      "bytes": 236,
+      "sha256": "1a89b82f667a8e818694bb56bdb570700049facd621af7327f5329cad01ee3be"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/index.js",
+      "bytes": 1592,
+      "sha256": "82b452c3b122092d74af831388c4ecb4cacdecdc4fc4b5efb06783466b2ff14a"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/index.js.map",
+      "bytes": 726,
+      "sha256": "0d5067a6a69e58c042c67d67b1b45f0bd8081aa3601e7be13f8625bb6dfc51d6"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/page.d.ts",
+      "bytes": 345,
+      "sha256": "ddedb4fb3750e9102085443dd628ffe96ab003f288d1c2bb8cf5ca283de13704"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/page.js",
+      "bytes": 13829,
+      "sha256": "870d5c3a4cd9538189721753e946df62889f374612bd86f19ffce38e08e6eb3c"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/page.js.map",
+      "bytes": 9094,
+      "sha256": "9553ded4d4d767307aa0d69a9899bf48c73bdb8f3d3bec592ed3236e3abbc2bc"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/pipeline.d.ts",
+      "bytes": 229,
+      "sha256": "5d6be8a0704ca1f81b7dd3ce45d00b1de166d35b74dc1c8eb5d2f086e6a9027f"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/pipeline.js",
+      "bytes": 2218,
+      "sha256": "3f5b79e5caae2fd46fb4fbec90195226dfacb89e5014d4ff0b4db3ffe5c41245"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/pipeline.js.map",
+      "bytes": 1056,
+      "sha256": "57b3f33af80fde18a47923d0957349235b660ca083b21435b67bdcf48801e9b8"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/postcss/build.d.ts",
+      "bytes": 889,
+      "sha256": "7b3a6a624a3739a71f80b2e6d87855ae65edf16776836ff642b28b50913097d9"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/postcss/build.js",
+      "bytes": 3331,
+      "sha256": "f605ccd2401d474651b6b27971dc4d5955c8da0f3f91cc5bcb077f7f7dfd1bfc"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/postcss/build.js.map",
+      "bytes": 2727,
+      "sha256": "a8058127a93ef245640e6a6079d9361d0b568109ba0f5c61e012b56fa7f8ef08"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/postcss/compile.d.ts",
+      "bytes": 484,
+      "sha256": "ccd34457cf052081337b11d767ad9b2f70cac09e23bc87ec47284d2806b6f7c0"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/postcss/compile.js",
+      "bytes": 14151,
+      "sha256": "e4780c74266d015a73af1979fab6d7a944a0d88c36b81852761aa733046139e1"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/postcss/compile.js.map",
+      "bytes": 8379,
+      "sha256": "8853df708c5b3cae7176ccda29f8d445b195323d47395083cf89b846cd2dd568"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/postcss/constants.d.ts",
+      "bytes": 1162,
+      "sha256": "5a5b93d8656715512797d185f277d06d036de5b77d639db374e12435034b0af7"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/postcss/constants.js",
+      "bytes": 2726,
+      "sha256": "23d75c5c32f6336de70bbaecda0bf8c00ce230b374735451b8f03dad0befa8a0"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/postcss/constants.js.map",
+      "bytes": 1219,
+      "sha256": "5337894b559dc112918f832a35a9da7c5f90770830eafb5966aa2075751a9fc7"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/postcss/index.d.ts",
+      "bytes": 50,
+      "sha256": "39b65a1312e7669209e82eb6c4aab27436d8cb3cc59ccadefb7c4359e827a53d"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/postcss/index.js",
+      "bytes": 876,
+      "sha256": "2c72bb45a0b7974d012ac5a7211b128938edb1640b771c321559aa44be8a25cc"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/postcss/index.js.map",
+      "bytes": 164,
+      "sha256": "c1cd20c329e8b3f471f2951df963b518a81797899b5c5a562076e5d90652cf84"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/postcss/resolve.d.ts",
+      "bytes": 344,
+      "sha256": "554ac9fa1c4fb62889f623c5b1bcd943648648233cbb7b6b3505c0e72d0085c5"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/postcss/resolve.js",
+      "bytes": 3048,
+      "sha256": "2e614582d78ead7b823d20df8df02382d342072024de6f0475a66f90ca00fc5f"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/postcss/resolve.js.map",
+      "bytes": 1581,
+      "sha256": "7452866cb9a062d9fa8ae78457c44eae15e4e29b9c8327b35e084fc459e3c3f9"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/postcss/resolvers.d.ts",
+      "bytes": 4186,
+      "sha256": "96f12a0f2542bd63e74449b1568ede3c92973a22d0b145d625d764cf36b0831c"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/postcss/resolvers.js",
+      "bytes": 15357,
+      "sha256": "f0b1137adb18332fbaa5f09b133e9585a768969e79a7ce2e5a94a89c52c6d0b0"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/postcss/resolvers.js.map",
+      "bytes": 12073,
+      "sha256": "565eeeccc38eb804a901bc7eb9eb5e167b13639f64fc917b6c6bc550afda12ad"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/postcss/types.d.ts",
+      "bytes": 91,
+      "sha256": "d64602ff072f6bbebe4531c9e4dfd371f2cdfaf54a91c766b6915f0e78a1cfc7"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/postcss/types.js",
+      "bytes": 110,
+      "sha256": "b0d2bc4142d0c62d43f996aaeb64f22c4889ac853f8a3765758b505d972d0149"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/postcss/types.js.map",
+      "bytes": 124,
+      "sha256": "7d8657b506d8b5f6cc32786e85e50b71a52f600a7f66393c326b0e44e9c872a3"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/postcss/url.d.ts",
+      "bytes": 248,
+      "sha256": "30aef9ef4b296599c397670aaf19eede764603ad7300a762c84452b0bcec22e1"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/postcss/url.js",
+      "bytes": 3574,
+      "sha256": "b759f07e9be08ebcb81f5fdb13c7f4df584813cd11bd7a74139f32e0dcc28289"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/postcss/url.js.map",
+      "bytes": 2004,
+      "sha256": "99a9de88252cd89e3d51d73bb3f716761837ca2b1e002c12283f989c4645339c"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/postcss/utils.d.ts",
+      "bytes": 1771,
+      "sha256": "dfb582319478486ea4c7f329e7779d7ca12a8cb2830d75d0d54fecbe111ff5bf"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/postcss/utils.js",
+      "bytes": 15658,
+      "sha256": "2eb15745755f7c7bdd283f71032ed6fb8c420ec386938ecf341a9526b0d57800"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/postcss/utils.js.map",
+      "bytes": 12956,
+      "sha256": "7d6f2b71d7662de3017d1003f8e2553afbfd2acf0a672df7444696c4d704a9ea"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/style.d.ts",
+      "bytes": 345,
+      "sha256": "7c0545b9518011ead271abbdbec26fc60e21346cfbcf4e147d7f7b54d2117ee9"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/style.js",
+      "bytes": 30447,
+      "sha256": "0c51e606da2c1c9095250b393918bf75ac0e1c1d78980f045c6020eaffa95fbe"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/style.js.map",
+      "bytes": 15713,
+      "sha256": "2f49dd7b5a905222f47c162f7d939633c1d219398f0423e85c6c530fc218dc90"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/template/app.d.ts",
+      "bytes": 1027,
+      "sha256": "4f568db927dc1710eff88299fd4ad7d768afe677ee965c583ef92ee374cf38e1"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/template/app.js",
+      "bytes": 7759,
+      "sha256": "8878204188bf6588b05a501d6b75b607cda2b767a9e868c03232496fe9401ef9"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/template/app.js.map",
+      "bytes": 3430,
+      "sha256": "030757bd57f7924709c16de37bf26fbe494304433866993ddc1c064fde4eb629"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/template/base.d.ts",
+      "bytes": 491,
+      "sha256": "f24e21c6575e716167833b300f1d5869df5e4649342539bb501b70a08b2d5d92"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/template/base.js",
+      "bytes": 1702,
+      "sha256": "2a916216b6e969b20aa42632abd6c3abbd7725bcb7c6a21c15d8a0559f3079cf"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/template/base.js.map",
+      "bytes": 1478,
+      "sha256": "09df4bc2382a70a7fdeff3547100bf3a1fe85fc0cbc857ab1212523066a89534"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/template/index.d.ts",
+      "bytes": 94,
+      "sha256": "5dcc095fe402379f283286f17594e60c0f55a9473e0760f496eaad39af9e570c"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/template/index.js",
+      "bytes": 618,
+      "sha256": "1fb116187353426c94196e8606ab03adde9fe285e54953576218b0bfc3b435aa"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/template/index.js.map",
+      "bytes": 199,
+      "sha256": "c6bcfd74f22a9e563af24d99a668c1e979a777feb4d47f6eedb7897c2a04155c"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/template/page.d.ts",
+      "bytes": 3414,
+      "sha256": "06a75bd81196ef8f92c8d9334f4b688b9356e637c14f4a30ac566229432a5fe3"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/template/page.js",
+      "bytes": 52479,
+      "sha256": "0078c21c072cfb9de2ccf50028166393ff12fceab061b818112bfddbfef0107b"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/template/page.js.map",
+      "bytes": 28959,
+      "sha256": "adb8c7667952a31a6091ddb567e747455f716843ac2f364c9cc9fe15ca430ea7"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/template/render.d.ts",
+      "bytes": 941,
+      "sha256": "a8b660f52c2c47a847d8c46cb3ebeb5369d475ba26525a85c5625c5d06550a9f"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/template/render.js",
+      "bytes": 14574,
+      "sha256": "28e9c1631003f71a87cbd9da0a521db3988a8660ef5e3992adac10b2d838c5f4"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/harmony/template/render.js.map",
+      "bytes": 8665,
+      "sha256": "7d8a1178e5e2fb26471f48915b5ec9e508dead4219ad6973b01932269e0d347f"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/index.h5.d.ts",
+      "bytes": 181,
+      "sha256": "37d7a818f05e4f5c8291f05237ac4261032c78011d9d3d3f4208db7291f8eee7"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/index.h5.js",
+      "bytes": 3196,
+      "sha256": "a6adb5623fc036427d0be4fd240cef68f1916d3e963a582585ceec0fac2306a0"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/index.harmony.d.ts",
+      "bytes": 191,
+      "sha256": "2bfa9372b7d2faeee09f5989666b2d539996dbc8b8b120c064c14e80ab576abf"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/index.harmony.js",
+      "bytes": 2559,
+      "sha256": "f4ae4b5dbcb3d0c8f80d8e68b4e4e9d7358c7d82ec11f49c828a9d001197c8ce"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/index.mini.d.ts",
+      "bytes": 185,
+      "sha256": "07191a43ce641bcee628ff9dbbb14229ed6c504380559c793fec892503efbe36"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/index.mini.js",
+      "bytes": 2761,
+      "sha256": "6463ef895c519eb84f885835b44d1fb720edef9768f6522f22e683c673b5ee06"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/mini/config.d.ts",
+      "bytes": 223,
+      "sha256": "4b1950174ac371b8d60b7d0e346296f70b5f9beb7845be749d812389ab8d64b2"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/mini/config.js",
+      "bytes": 16830,
+      "sha256": "3d4c6dea3dffc4da2ad9010b05f085d64c7186c369cc3a411b94b20cc18e0cb8"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/mini/emit.d.ts",
+      "bytes": 223,
+      "sha256": "4b1950174ac371b8d60b7d0e346296f70b5f9beb7845be749d812389ab8d64b2"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/mini/emit.js",
+      "bytes": 15219,
+      "sha256": "1cf1d7ad8b40eaa61a2d64cb72bd33f3a3ccdbb13b035587ec8f7fac5dc16719"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/mini/entry.d.ts",
+      "bytes": 223,
+      "sha256": "4b1950174ac371b8d60b7d0e346296f70b5f9beb7845be749d812389ab8d64b2"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/mini/entry.js",
+      "bytes": 9170,
+      "sha256": "c9c64be43e0fc72873879ce0547a447678fb710f334f02db960f3c1aecd2afd5"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/mini/entry.js.map",
+      "bytes": 5197,
+      "sha256": "98b37d58b8a1d330357cd1e1acf8b411f5fb7407057b6fac7b48b8d807ca2dba"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/mini/index.d.ts",
+      "bytes": 225,
+      "sha256": "42e0bbe5d139f1a6a09e31e248c91ece8e8d45d4b4510d7fc37a3c813f26316e"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/mini/index.js",
+      "bytes": 1429,
+      "sha256": "306d3af0ab4296777c05b77ce8f61ebe5f3431aa549e38af9b006fae35ce0b16"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/mini/index.js.map",
+      "bytes": 596,
+      "sha256": "2b4a853cb5981b4bb48676aa81af1cbbcebd67acdc575102723b95fe8b396f85"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/mini/native-support.d.ts",
+      "bytes": 495,
+      "sha256": "025b3ae37562340eb157fd5ee15a32ab91779d588ec8d3f0698eefda6d6a5703"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/mini/native-support.js",
+      "bytes": 9344,
+      "sha256": "0127b696e9c2b1daad503c6e5ee751d0fb0cc0eacb074358222eda8828466da7"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/mini/native-support.js.map",
+      "bytes": 5639,
+      "sha256": "e34722a65346f9509ce2901645f84106c122701dbbd2bcb90954dbc9c6031438"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/mini/page.d.ts",
+      "bytes": 279,
+      "sha256": "e0c3383d1507d669f5b1a33fde730e12c6ad5e68bd768ca1c326e5c87d63e879"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/mini/page.js",
+      "bytes": 7025,
+      "sha256": "0fb722a73f785a4a7d58676a94cb707a913d448aabcd44dc0a4f8eeaafc1f466"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/mini/page.js.map",
+      "bytes": 4778,
+      "sha256": "6a29b6efb0af4a102a21122a065f70f5790f3880b4a1402212b8d6e344474176"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/mini/pipeline.d.ts",
+      "bytes": 223,
+      "sha256": "4b1950174ac371b8d60b7d0e346296f70b5f9beb7845be749d812389ab8d64b2"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/mini/pipeline.js",
+      "bytes": 1835,
+      "sha256": "4e1271f918e13770fe725719992e76cde3f73b208d6df7036ac25d833a01eb36"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/mini/pipeline.js.map",
+      "bytes": 1307,
+      "sha256": "5f57cd2176470126325ecb043a6626e59d97ada0ac014dcaff50f226ffa49acf"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/mini/style.d.ts",
+      "bytes": 223,
+      "sha256": "4b1950174ac371b8d60b7d0e346296f70b5f9beb7845be749d812389ab8d64b2"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/mini/style.js",
+      "bytes": 4319,
+      "sha256": "6ec5a4ea942f04602f6d1c6e2ac2357689b79d159925aab3b6a31f06eeea6d6c"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/mini/style.js.map",
+      "bytes": 2903,
+      "sha256": "8d3290eb42dd90c9e43c7a0a4cfd80c6d8d6bc2e806de65c3ffcd3511ae83b10"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/postcss/postcss.h5.d.ts",
+      "bytes": 432,
+      "sha256": "22482b020abc8756cd52ab3cef62cd1a159ca82fb8ba4670f9614fbe1b30bc99"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/postcss/postcss.h5.js",
+      "bytes": 3026,
+      "sha256": "7555f7f85c68462cb3a4eb60ff736db6e78717b829a575de256d8b73228cdf8f"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/postcss/postcss.h5.js.map",
+      "bytes": 2050,
+      "sha256": "5813936fa988e9316e711a1eb683c7ea9e557c3087ec3c69249244b0bab61187"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/postcss/postcss.harmony.d.ts",
+      "bytes": 313,
+      "sha256": "fb14f8069b41332dcb735bfc385fbf2dead1d5a800fa3ad8248d1e2f66ad9f2a"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/postcss/postcss.harmony.js",
+      "bytes": 1419,
+      "sha256": "496de4ca2b0af5643742a7a1be796cdd875f259795f1faf26c2d5b68c5830c4b"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/postcss/postcss.harmony.js.map",
+      "bytes": 770,
+      "sha256": "e0835fa9485648baf8aac745c1133373861c1df93eaf45a63456d16f0befe91b"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/postcss/postcss.mini.d.ts",
+      "bytes": 313,
+      "sha256": "fb14f8069b41332dcb735bfc385fbf2dead1d5a800fa3ad8248d1e2f66ad9f2a"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/postcss/postcss.mini.js",
+      "bytes": 1416,
+      "sha256": "4ef4f7e346d43347704a2cab46c8f32efca528bec905bfc3c34f6b972a9d5889"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/postcss/postcss.mini.js.map",
+      "bytes": 764,
+      "sha256": "7f5e3f226aad8679d65857a0a3a321488ee5418c457a28d506cba036a7edd277"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/template/comp.js",
+      "bytes": 190,
+      "sha256": "78025f75ceb946b572797a713d5895e1e2137e502804953ba01bfe7611ea477e"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/template/custom-wrapper.js",
+      "bytes": 169,
+      "sha256": "34c0b8923e46686a9fef4eabb04b56dc2d4d277a3288ce168d3a39d34d1150ad"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/utils/compiler/base.d.ts",
+      "bytes": 1761,
+      "sha256": "a94a17c5621455d91259543d6e5f309e8f4609ad4e863deac9966e308c872909"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/utils/compiler/base.js",
+      "bytes": 6536,
+      "sha256": "db291584bd69333ac416a42e0e839520c39734b286c8b59f1cf7b95f8fc01d23"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/utils/compiler/base.js.map",
+      "bytes": 5112,
+      "sha256": "781f57268dcebabc3b877d1df21280d6603f1fee77eaf1b5ad3521b741c9f791"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/utils/compiler/h5.d.ts",
+      "bytes": 796,
+      "sha256": "1163279a6b4b9b44b362a21f38f664bc24b5377585aa8a4c320eca61d5edfe56"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/utils/compiler/h5.js",
+      "bytes": 4035,
+      "sha256": "24567fa78967caa2174cad2b05d2c6674f4cb5d568867c50caa89197fd38b8a7"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/utils/compiler/h5.js.map",
+      "bytes": 3055,
+      "sha256": "6739064a945d301cb09589f3584a225682009bde080342b91d111efb3d18d1a4"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/utils/compiler/harmony.d.ts",
+      "bytes": 1662,
+      "sha256": "cddfa6236afc3ff05f599cc53a7a275198183eaccc75106443341b0b867d9450"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/utils/compiler/harmony.js",
+      "bytes": 16414,
+      "sha256": "a31bceba462682126cce7d00e80355e6636038f94167817264be8809c4875ea9"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/utils/compiler/harmony.js.map",
+      "bytes": 13198,
+      "sha256": "351136a778a4dc2c93dbf76763eb11d8e772a05177f60329020dd9c37ba2cbbd"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/utils/compiler/mini.d.ts",
+      "bytes": 1267,
+      "sha256": "946911ce5d0f11bbf0ce4d7a5c21b783cd50d22787c4d108d671b44e1b87cd3b"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/utils/compiler/mini.js",
+      "bytes": 7709,
+      "sha256": "6baac5edf8196ac711818993491d8b16318dc73ad22791b8d924c9d16d861c61"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/utils/compiler/mini.js.map",
+      "bytes": 6127,
+      "sha256": "17ec10c3ed7d2a2e6f7cdbf8197541b750c12d0fefa5dcaf42d388af0df3d564"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/utils/component.d.ts",
+      "bytes": 130,
+      "sha256": "e0d83c1501f2b574abfba0fb9ee6092043ef30f695bf311d9261b7fca7c83854"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/utils/component.js",
+      "bytes": 445,
+      "sha256": "e3d8cc0e234aa931e697ba11f553144b77cc9c3d7d5b8d370b9a9791bad2807c"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/utils/component.js.map",
+      "bytes": 410,
+      "sha256": "7075746b823f5c21daf7fbe63b393dc3feb43f76f7d3231c3f5dc38382778de9"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/utils/constants.d.ts",
+      "bytes": 1520,
+      "sha256": "4c716132f5c3a705ee437aa91c463e2235535e4aad59cec55ab18ed3a8de797a"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/utils/constants.js",
+      "bytes": 1869,
+      "sha256": "d29a1c5a4e70dee7330f7a6cef479a40b14f123267e7b830a3aa5ebc28d4de24"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/utils/constants.js.map",
+      "bytes": 1259,
+      "sha256": "cd2b8f51badb33a3cd6a9e5838c6ab6f9e7f4695c5ba1c1ae4fae076ac6b1a12"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/utils/createFilter.d.ts",
+      "bytes": 429,
+      "sha256": "a4d13b85c4d28c28568e169de526d134492ad33f16fc81068c8abc8b4af04f64"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/utils/createFilter.js",
+      "bytes": 4176,
+      "sha256": "3ba079ad9967c815c56d94134412e15fcbb53b254305915a6e46533c4301cbed"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/utils/createFilter.js.map",
+      "bytes": 3102,
+      "sha256": "932be9e44efbecc58a3575dab1bbeb01abd7e61326e6757d80d7609d28b65760"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/utils/html.d.ts",
+      "bytes": 92,
+      "sha256": "be4818e15ca3401ad04a13634ed61fe8133c21ff27a200c3517dc1e91e89413f"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/utils/html.js",
+      "bytes": 1761,
+      "sha256": "eeff84cfb8d7d8e4cf89c44fdad5adfc4011fd8994124c5ad3ceab8eb7f1ef5a"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/utils/html.js.map",
+      "bytes": 1138,
+      "sha256": "4d2b0f309dfa69bb8339695d516efd9c25270d8e95730d47b4da17040a5a81af"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/utils/index.d.ts",
+      "bytes": 3204,
+      "sha256": "04ad29e93f6a77d8679ff57957ba5159bb759d8f243d9e2cf4537fb8097a39b3"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/utils/index.js",
+      "bytes": 11409,
+      "sha256": "a59f0c99ba3c4abd64dd131a76aaafcb815d7eebf46da063269736f40b22b560"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/utils/index.js.map",
+      "bytes": 9227,
+      "sha256": "5a30b64f90728f0a0eba4d580e53342b4ca7ebcb263082335b50ea58d7f8a1ce"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/utils/logger.d.ts",
+      "bytes": 122,
+      "sha256": "cb3cc40950c4923079a6c1ca9d86c130f0c849e2a9dd646101a966901c05dd61"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/utils/logger.js",
+      "bytes": 581,
+      "sha256": "82d0da381377c7f4806cd9178145f175cce62f1b2155a4a98167ec98a5e7575b"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/utils/logger.js.map",
+      "bytes": 572,
+      "sha256": "8f71d853cae0d34bc38692688e4cefcd5962c136137a8b430a09ef126d09d0ae"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/utils/map.d.ts",
+      "bytes": 283,
+      "sha256": "2351232057ac059e250334207d5074aca6e515e430d648c3086a2ac67333320f"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/utils/map.js",
+      "bytes": 1080,
+      "sha256": "e80e09e9b58fafea5a734bbee619c80422af31ece3359d974d7aaf813d3e8ffd"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/utils/map.js.map",
+      "bytes": 1237,
+      "sha256": "653057720035dacafcf70aee304b944d6ed67ccedb391bbd4e2e37e07970a361"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/utils/rollup.d.ts",
+      "bytes": 490,
+      "sha256": "6e3144950f0913c4acc310d74f763d369ac358a262f8d7edaa32a1db7caf007e"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/utils/rollup.js",
+      "bytes": 3685,
+      "sha256": "6e4af7fdccac2a76867a6b0ed0f47467afe0083ab31a7ed1301fb3626ff79f5a"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/dist/utils/rollup.js.map",
+      "bytes": 1735,
+      "sha256": "fc54c42b18085ca2d94ce0fc692dd1fd9e7e9ea252055fc1fe1fef0b344b5bee"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/index.js",
+      "bytes": 371,
+      "sha256": "a8dece337e10fc5cf916355cf8ada149e74fb335c44a313a90c78c3099d0325f"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/LICENSE",
+      "bytes": 6914,
+      "sha256": "984f2dd0f1ef09cefdd374bf43b80f63e6fb70fe9d6247e7ab1379277d6bdc6a"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/MAINTENANCE.md",
+      "bytes": 4008,
+      "sha256": "932971d6464fda3a10a22e75ed44f5a0d959828e2cb145ed3d00b38d7ebbb4a3"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/maintenance.patch",
+      "bytes": 50626,
+      "sha256": "e31842430d7b59acb9886f61ebc9ad58c809db7fc877f79be3a104bba50e2284"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/package.json",
+      "bytes": 2220,
+      "sha256": "976d4468c09a3cdf96a8b49f8ddf6515aceb5d69603b2a163fa21b8e44a3feee"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/PATCH-MANIFEST.json",
+      "bytes": 4768,
+      "sha256": "1e82d55e984f92413dacfe46e99683eff5ef87621e14ff3e16a52a212c0d8131"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/PATCHES.json",
+      "bytes": 12869,
+      "sha256": "dc2292d9e2548234b058a9705f48d027b99b189f0f28f87dbac4f4a8ce4dc5b1"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/README.md",
+      "bytes": 15,
+      "sha256": "0bbacd589a98a76d8d867d4eca56496eee27c33f13589c9e262e00fd8521bafb"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/REBUILD.py",
+      "bytes": 4274,
+      "sha256": "768ca91ae641666f7a61d284c4c9a2332af965cd7cb61805af3929050b84444d"
+    },
+    {
+      "path": "apps/client/tooling/taro-vite-runner/tests/async-template.test.mjs",
+      "bytes": 4371,
+      "sha256": "56f2e864c2e90963d20c3ba4523ee3c8b7fff4467e7243be72c9cc1f062b5dbc"
+    },
+    {
+      "path": "apps/client/tsconfig.json",
+      "bytes": 523,
+      "sha256": "67a5177a6a2963df73c89e3969622bbe5d417608cadb11e0721137d7fda1c76e"
+    },
+    {
+      "path": "apps/server/src/demand_search/__init__.py",
+      "bytes": 45,
+      "sha256": "2247943767a132132ca3de7241a399ec5ed07974e6af28aca5a3c6f3af6e062e"
+    },
+    {
+      "path": "apps/server/src/demand_search/ai_demand.py",
+      "bytes": 14644,
+      "sha256": "0d16d27dc14b624c06c5cf94d83624a05eb0e6d24304dec126bb0f65b85e9e8d"
+    },
+    {
+      "path": "apps/server/src/demand_search/collaboration.py",
+      "bytes": 11222,
+      "sha256": "e8437abc10e5c3af248bd722fe4f96e40575bafdaa60073317c8853f63c24cdd"
+    },
+    {
+      "path": "apps/server/src/demand_search/config.py",
+      "bytes": 1140,
+      "sha256": "90a06a9099ddd4bad90eda7d024be56715b4fc18d8099fe5e718e06856f7d85a"
+    },
+    {
+      "path": "apps/server/src/demand_search/demand_models.py",
+      "bytes": 3953,
+      "sha256": "daa1d4b6504ddb23f61e7b8b37ccbc51d7b8a89b57480ebd0761c1230ad2ec80"
+    },
+    {
+      "path": "apps/server/src/demand_search/demand_routes.py",
+      "bytes": 3975,
+      "sha256": "1e15430730fc17dcad648289deaee874062ea011624b56f9a81ecfefa1c4ab5c"
+    },
+    {
+      "path": "apps/server/src/demand_search/demand_service.py",
+      "bytes": 30646,
+      "sha256": "89f09622cb2260d5183818cb73baaa3382ad6335c3f5083fa6bd47af0c99bcaa"
+    },
+    {
+      "path": "apps/server/src/demand_search/errors.py",
+      "bytes": 315,
+      "sha256": "a9c254c1fde4b1e069345da83b0e0d4b29824eedc936b3cdc38a1053c8cbb063"
+    },
+    {
+      "path": "apps/server/src/demand_search/history_routes.py",
+      "bytes": 2587,
+      "sha256": "0b81963580ff121a5138762a90ec6b94d2555ad0219f5c39812a57eb99f03e54"
+    },
+    {
+      "path": "apps/server/src/demand_search/history_service.py",
+      "bytes": 15605,
+      "sha256": "82918f5e8ca661ddcb8342172d31920caddd47035588b2a82087ae5c7ed38990"
+    },
+    {
+      "path": "apps/server/src/demand_search/local_security.py",
+      "bytes": 8055,
+      "sha256": "f61cc85dfe0cb9eb6792330db089aae2795410a4bd7fdf466558f21b8a9af54d"
+    },
+    {
+      "path": "apps/server/src/demand_search/main.py",
+      "bytes": 6884,
+      "sha256": "4c1fc87a117716d80c639c6f4fa31f0ee177def5f2e1dd8a7ab51ff499abd2d1"
+    },
+    {
+      "path": "apps/server/src/demand_search/market_catalog.py",
+      "bytes": 73101,
+      "sha256": "3340dda660e50ac3dbdc22299b1ba956e40841f2f6fc8d6957a3342c13ef88ff"
+    },
+    {
+      "path": "apps/server/src/demand_search/market_context.py",
+      "bytes": 3843,
+      "sha256": "90eb37aba17e68ca4a88cdb16a0e50f7c3d512994dd253e49c5900ce37c109a0"
+    },
+    {
+      "path": "apps/server/src/demand_search/market_routes.py",
+      "bytes": 1101,
+      "sha256": "becba0fb7b431303d884bd3972234ae099c642d3bdb6742aa9761c91fc9ef76f"
+    },
+    {
+      "path": "apps/server/src/demand_search/model_routes.py",
+      "bytes": 2446,
+      "sha256": "074af3db742f8b18a9e8b3a79d96d97d284e949225b2c6080364cc7c9e740afe"
+    },
+    {
+      "path": "apps/server/src/demand_search/model_service.py",
+      "bytes": 13790,
+      "sha256": "f3fc3677eae211308f423a6cbf53c6f919ff5b5ec967a267b8e480643cec2ab2"
+    },
+    {
+      "path": "apps/server/src/demand_search/ncp_adapter.py",
+      "bytes": 12270,
+      "sha256": "d31f8429e53aa7224eef8bda3fa1f925d4cbeca7013db9ae03792edb93f1c37b"
+    },
+    {
+      "path": "apps/server/src/demand_search/product_routes.py",
+      "bytes": 894,
+      "sha256": "93856360d6dafae8148b522ba2a91b1e5e38134c5551bdf423a4a7bf1a507844"
+    },
+    {
+      "path": "apps/server/src/demand_search/product_sources.py",
+      "bytes": 11460,
+      "sha256": "b308db934c9c87422f32225057a0aca73896de9f3cb192f56989e03572cd81c4"
+    },
+    {
+      "path": "apps/server/src/demand_search/providers.py",
+      "bytes": 35550,
+      "sha256": "41df4d32b0cb49ffb74678396fce9c166045cd3a8e5a21632d34edff990645a5"
+    },
+    {
+      "path": "apps/server/src/demand_search/secret_vault.py",
+      "bytes": 3867,
+      "sha256": "c76012f0a0f0a1a802a2e3d1048438e14585b512fa16d5ff3998eae1cc0491a7"
+    },
+    {
+      "path": "apps/server/src/demand_search/simulated_market.py",
+      "bytes": 23941,
+      "sha256": "5d3828582d72a85b8a861933c699f9f4355550e390a5833b5cb9f8d53c104ea5"
+    },
+    {
+      "path": "apps/server/src/demand_search/storage.py",
+      "bytes": 2596,
+      "sha256": "b91e372a58f118a90eb88e34f0fd25694cca5df43ed0ee2660041bb1bba65339"
+    },
+    {
+      "path": "config/ncp-import-lock.json",
+      "bytes": 9625,
+      "sha256": "30494eff8757606d16e55c336776c74365703681a0e01e5d22f5768b6c3bf7d0"
+    },
+    {
+      "path": "data/simulated-market/market.synthetic.sqlite3",
+      "bytes": 5189632,
+      "sha256": "253dba7aa3cc2bc8ff2e7feaf2aa96ff18ba24bb4e8dfca276e72b76240e2602"
+    },
+    {
+      "path": "data/simulated-market/README.md",
+      "bytes": 4066,
+      "sha256": "4b4385b60ffefc74027d39ea0d6182747d1a2c695a9cc2f51d09cf4892f8968f"
+    },
+    {
+      "path": "db/migrations/001_s0.sql",
+      "bytes": 388,
+      "sha256": "0b0d7e9be1f550e33fef6eec608d8c86848a3ce5c3e9178253980a42aab51937"
+    },
+    {
+      "path": "db/migrations/002_model_configs.sql",
+      "bytes": 917,
+      "sha256": "aab290cafc10d7673f8a4568a0b14c9185d0d4703fb70e2d30ac6a75fa2e0466"
+    },
+    {
+      "path": "db/migrations/003_conversations.sql",
+      "bytes": 1139,
+      "sha256": "01fb761c3746cf072e9f6f86a0825701f925878dc54eac0f8b2cd33b81f80817"
+    },
+    {
+      "path": "db/migrations/004_demands.sql",
+      "bytes": 1908,
+      "sha256": "88fe0c4ffce55c2bfd5cc3350a52e15f17afe04b6b5ba68915b9a43a8cf9cd3f"
+    },
+    {
+      "path": "docs/ADAPTIVE-COLLABORATION.md",
+      "bytes": 3971,
+      "sha256": "3a80e22807a82436345064b2f024049332380522ea3017768ee38329a6a91a55"
+    },
+    {
+      "path": "docs/AI-PROVIDERS.md",
+      "bytes": 8703,
+      "sha256": "27265e9bf32e7867590237ddb2f0a3cbae79a5c0e48c168a07ab0037af7d7bd0"
+    },
+    {
+      "path": "docs/API.md",
+      "bytes": 2601,
+      "sha256": "a4c8c7a7a4cff3cdacb1033dfa7699742bdf8ac954f78d3ea67c0bbbcc122710"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "bytes": 4448,
+      "sha256": "2cce43ad152ea33ecfddba873377500dd0e5064140f0de94e6277fdca4d1d4d5"
+    },
+    {
+      "path": "docs/DEMANDS.md",
+      "bytes": 11456,
+      "sha256": "e90978391779a7ecfc1825a00fc7c897f707dbed117935595625190c20816ce3"
+    },
+    {
+      "path": "docs/dependency-licenses-python.json",
+      "bytes": 10559,
+      "sha256": "72ebb12fe98285fbcd932621e094ee615812100623d612b042613ee435aed065"
+    },
+    {
+      "path": "docs/DEPLOY.md",
+      "bytes": 3687,
+      "sha256": "544dfdc64a08de643e91a7211c3eb9db15172ff1576211eaf94477016d8baf7e"
+    },
+    {
+      "path": "docs/ENVIRONMENT.md",
+      "bytes": 4376,
+      "sha256": "f45355261e50ccd72bba4922a8a58afc7d7423830b4317996e5984bbcede64b5"
+    },
+    {
+      "path": "docs/HISTORY.md",
+      "bytes": 5161,
+      "sha256": "01ebd23217e77e1d49d96535d7060d5086d0976f242621a917944beadc652ea9"
+    },
+    {
+      "path": "docs/LOCAL-DESKTOP.md",
+      "bytes": 7012,
+      "sha256": "b12f343b08de5193a670c263fffaf2905303ab85fca8b3a15b005fd1e74f9424"
+    },
+    {
+      "path": "docs/NCP-COMPATIBILITY.md",
+      "bytes": 9447,
+      "sha256": "73b2a2f45b611b19296f1b27414f1f61dfeac69b9bdaca367d752e5becb231b1"
+    },
+    {
+      "path": "docs/PRIVACY-AND-SECURITY.md",
+      "bytes": 5434,
+      "sha256": "f83a0778a0c18a1c0b0482cb79f1c6009c4ac6b1806a750cd0a50e0eafeda9fc"
+    },
+    {
+      "path": "docs/PRODUCT-SOURCES.md",
+      "bytes": 6860,
+      "sha256": "23a005bb5dc3488e62ae2159da1493279ca23db530d99ce0d4c579c2a031e9c2"
+    },
+    {
+      "path": "docs/PROVIDER-STATUS.md",
+      "bytes": 5615,
+      "sha256": "e8cad890437652021d76255c2b6e7b1bd48c215ce24df43bc09e357186c2938a"
+    },
+    {
+      "path": "docs/RELEASE-CHECKLIST.md",
+      "bytes": 1760,
+      "sha256": "e5667adb8c466b53441ce1ca426e0e963f0214555093c94088b679b29c3091a1"
+    },
+    {
+      "path": "docs/research/COMMERCE-OPTIONS.md",
+      "bytes": 9573,
+      "sha256": "c718df0ee09efc478ba02ccd6fb711729ca6f075b5b506c491f663956d591c16"
+    },
+    {
+      "path": "docs/research/NCP-MCP-ASSESSMENT.md",
+      "bytes": 9758,
+      "sha256": "6c3f8e7888f1f5092fbfe3019fc8461e553d6d87f6953dff942df292461269be"
+    },
+    {
+      "path": "docs/SECURITY-BLOCKERS.md",
+      "bytes": 2065,
+      "sha256": "03dd41209707056e30c4c7aff75adacd66c4ced7379bbc0a39cbdf6392f4f1f9"
+    },
+    {
+      "path": "docs/SIMULATED-MARKET.md",
+      "bytes": 9283,
+      "sha256": "73f1f10d28c5d9880969fd317ea064d1cb84484eff9eddbd1cf9023f9dcfb706"
+    },
+    {
+      "path": "docs/VALIDATION.md",
+      "bytes": 10675,
+      "sha256": "52bfb9dc26f45405ceaa1a28a2751e79ffa4051dbc023d6afc2d93593527711a"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 34523,
+      "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0"
+    },
+    {
+      "path": "LICENSE-DOCS.md",
+      "bytes": 1279,
+      "sha256": "d5b982c6cdff2937f4725ef561b7c8ccad5cf616d3d8cf3ef685179fe9db3917"
+    },
+    {
+      "path": "LICENSE-STATUS.md",
+      "bytes": 2165,
+      "sha256": "b7d00bebc469c4322d3f0d32116ad50888bb2ce6199104905351f3bc75cda573"
+    },
+    {
+      "path": "LICENSES/CC-BY-4.0.txt",
+      "bytes": 18657,
+      "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 446,
+      "sha256": "ecc5964eb01e4b0acd60339b9b697704626d81b3fcf1392af5891ca655a4113a"
+    },
+    {
+      "path": "README.en.md",
+      "bytes": 8688,
+      "sha256": "ec2c7c0136c62b2dcb1d8e159672f12186908dfe5f46077a3ae6b1475914c2aa"
+    },
+    {
+      "path": "README.md",
+      "bytes": 7210,
+      "sha256": "88b91e033394b5157a4a72c43a0e7064767a04fe1a4812c07e28df38199ef3fa"
+    },
+    {
+      "path": "requirements.in",
+      "bytes": 263,
+      "sha256": "0ddd56c72d7d6b205a2b5698157597489faaf55a437db2bf4ba90506d2111169"
+    },
+    {
+      "path": "requirements.lock",
+      "bytes": 2988,
+      "sha256": "23e6986909e8b77c203a8562ce78708aabb51d79108fde08a6d3662c0447f62f"
+    },
+    {
+      "path": "scripts/check_environment.py",
+      "bytes": 978,
+      "sha256": "dc022f8f5289af5f5fb52a83e52851fb0c905c6fa9a3330be08388f4882d52be"
+    },
+    {
+      "path": "scripts/export_simulated_market.py",
+      "bytes": 6217,
+      "sha256": "232a9fca2e630d357151b88f46ebb09a8eda236c3eae57d75a1cb59d65d7f47d"
+    },
+    {
+      "path": "scripts/init.ps1",
+      "bytes": 1524,
+      "sha256": "b01836aa4edf869e22e6d0cb9ede273a7f3d636d64d147fde93acace54c742bb"
+    },
+    {
+      "path": "scripts/init_simulated_market.py",
+      "bytes": 822,
+      "sha256": "867300051743f467c73d460f4e9500a20a3a2a27ee0985a7f06d35d28f67919b"
+    },
+    {
+      "path": "scripts/scan_secrets.py",
+      "bytes": 12012,
+      "sha256": "806d4684cf2ff17a8144f8a3b3ebae945195935e351dafca97be3f3fced0e63d"
+    },
+    {
+      "path": "scripts/serve.py",
+      "bytes": 709,
+      "sha256": "e73ef3f64cce01d97757e17a1052179b1ab2f63ed5ad1107f75ca2da9dceca26"
+    },
+    {
+      "path": "scripts/smoke_backend.py",
+      "bytes": 6234,
+      "sha256": "67b50ee2913b39a781b9440107cf2dfb28eeae139c3e8bd1aa221485d313ef58"
+    },
+    {
+      "path": "scripts/smoke_demands.py",
+      "bytes": 10777,
+      "sha256": "5c2cc902ecd14a65ec23604ee52569220b97285cfa02d050bd88fcd5e66b38eb"
+    },
+    {
+      "path": "scripts/smoke_launcher.py",
+      "bytes": 10871,
+      "sha256": "8e60301fc50e9a432d798d3e94eaa423b2039cde5093acec26b9de7a0305c527"
+    },
+    {
+      "path": "scripts/smoke_models.py",
+      "bytes": 13453,
+      "sha256": "e6d8b559ca7b42aa6d200e91382a1ee32387b7aed1943ca49317388102037c92"
+    },
+    {
+      "path": "scripts/start-local.ps1",
+      "bytes": 8853,
+      "sha256": "33c08078219ba1c80ef400b2f7ee82ce02ebea166ac6ec877a6b504d05243754"
+    },
+    {
+      "path": "scripts/stop-local.ps1",
+      "bytes": 3125,
+      "sha256": "a531af33a35cd3ee1e9d097c859c52b27f79a68d302002deaf73cc7fe0f5e86a"
+    },
+    {
+      "path": "scripts/verify.py",
+      "bytes": 6591,
+      "sha256": "637a373135829681d414f7d3dab15ee4d545a3ece2f01b1eda9b8d1cdd17417b"
+    },
+    {
+      "path": "SECURITY.md",
+      "bytes": 2660,
+      "sha256": "e79c6618382be809eb5ee2581156019d681ffac124f95385b8eae6806cc3a062"
+    },
+    {
+      "path": "Start-Demand-Assistant.cmd",
+      "bytes": 561,
+      "sha256": "b875855893d43df05e768fe073055acf554789bdbe59c578209a7e366dd4491a"
+    },
+    {
+      "path": "Stop-Demand-Assistant.cmd",
+      "bytes": 504,
+      "sha256": "14b5bd4c0d84c3c5d2f73ebce6e73e168f175c5fa1dbc545484e425d8a2f3738"
+    },
+    {
+      "path": "tests/fixtures/model_http_server.py",
+      "bytes": 2849,
+      "sha256": "28463227471a6b22e539e32247f5110348ae8909e8c9526f3a35cb5552cad490"
+    },
+    {
+      "path": "tests/fixtures/s2_model_server.py",
+      "bytes": 15771,
+      "sha256": "10e7198196adc957f3991ed5095867585fc7be0c51643a7b32b62700654dccae"
+    },
+    {
+      "path": "tests/test_ai_demand.py",
+      "bytes": 4104,
+      "sha256": "0a4f9d3733a9fa479d2c1a75bb2ca1d3c6279462fc9d90654a0a57e1d065a13f"
+    },
+    {
+      "path": "tests/test_archive_scan.py",
+      "bytes": 10464,
+      "sha256": "244d737fcf8391449ed3a1fd6b3f884989688ef4536402c6a266df29cf684ec8"
+    },
+    {
+      "path": "tests/test_collaboration.py",
+      "bytes": 20052,
+      "sha256": "1a839f36325a06fc073b06499f92510f4ea0c7e28827ad01b25b0782269c7d07"
+    },
+    {
+      "path": "tests/test_collaboration_security.py",
+      "bytes": 1774,
+      "sha256": "fbc016f0fe46bc0c18a7641aef96f85933fe3d54c080a6768e72bb706dd34a0d"
+    },
+    {
+      "path": "tests/test_demands.py",
+      "bytes": 16946,
+      "sha256": "176df637a44f7896c14d634eb1135a49c586562a03ce7df6e721468eecafd8b8"
+    },
+    {
+      "path": "tests/test_foundation.py",
+      "bytes": 3338,
+      "sha256": "1b2640c3abdacd6823a8c1d34d7bf2be927fc896ff6ace966d075e243fa9743b"
+    },
+    {
+      "path": "tests/test_history.py",
+      "bytes": 10606,
+      "sha256": "09b51cf17d0509f99c8212576c6f0583314b91913adfcf322770736f25f33171"
+    },
+    {
+      "path": "tests/test_local_security.py",
+      "bytes": 4598,
+      "sha256": "5f26607f6a1943a363204cf586d16b38169eaae1baabcebd596aba078ffe17cf"
+    },
+    {
+      "path": "tests/test_maintained_sources.py",
+      "bytes": 6798,
+      "sha256": "8417c3a7848500b31e9eebcabaab2faa9fbfd2022c246614b9db9055201bcf04"
+    },
+    {
+      "path": "tests/test_market_ai_context.py",
+      "bytes": 10275,
+      "sha256": "1676f2c88a3ad7562800f8c8aac856fcbf96102deec5129c09f9644b21f9724e"
+    },
+    {
+      "path": "tests/test_models.py",
+      "bytes": 9129,
+      "sha256": "5cd3d67dd09c4b0ca5ded3c071310022c8d827ea84e9e83fd448f736f479be96"
+    },
+    {
+      "path": "tests/test_multi_items.py",
+      "bytes": 10974,
+      "sha256": "6068e24fa9859d819e1629cc1ed9a8bbf857efbde77f08ffeb175f9c9b5ab1f3"
+    },
+    {
+      "path": "tests/test_ncp_adapter.py",
+      "bytes": 11103,
+      "sha256": "c1bfc495afa14758b0548991a27da67223ff877e0a03d1ffeb66cdd24022d192"
+    },
+    {
+      "path": "tests/test_ncp_package.py",
+      "bytes": 966,
+      "sha256": "88ba0fa627f9fb1a3726fad115429d42c6174023b0b4a77f1ca57554c576db68"
+    },
+    {
+      "path": "tests/test_product_sources.py",
+      "bytes": 16722,
+      "sha256": "3429355cd147c8dad5fad4a7c75d99f8e974d4756160a737f2aa9f8dee4c116d"
+    },
+    {
+      "path": "tests/test_provider_stream.py",
+      "bytes": 15621,
+      "sha256": "f9796e40304971f16a9c653bfdd25dd62197b02c1629bca25f84582d170aed23"
+    },
+    {
+      "path": "tests/test_provider_transport.py",
+      "bytes": 7255,
+      "sha256": "8e140b57bf68ebe362e7d7f0c008ec9f2bb114bcf44b139e5a4411ec95aedf57"
+    },
+    {
+      "path": "tests/test_referenced_versions.py",
+      "bytes": 14753,
+      "sha256": "251a1516f12fd04fe92b49a13314b7fb70a7cfeacfb188bd4fbbf3973e16ee76"
+    },
+    {
+      "path": "tests/test_s2_review.py",
+      "bytes": 5463,
+      "sha256": "580d0444edfd3e2e3062a89960906fd00a66ade9828267e3341ba507a6fd9d8f"
+    },
+    {
+      "path": "tests/test_s2_upgrade.py",
+      "bytes": 3103,
+      "sha256": "c1ad61ef955439775d20619cf3829426dc1526093beae63b4041bb085ea73fdd"
+    },
+    {
+      "path": "tests/test_security_review.py",
+      "bytes": 6845,
+      "sha256": "645f0b4325da49011c10e29801144f34688b58fccf1cab156ebba2065c2bb301"
+    },
+    {
+      "path": "tests/test_simulated_market.py",
+      "bytes": 13813,
+      "sha256": "5320f7bea971732af93b2ac3f3c147366016108d7d2fe59a3ed5d917c44eb814"
+    },
+    {
+      "path": "tests/test_simulated_market_export.py",
+      "bytes": 2752,
+      "sha256": "cb11edb0dc673e17a7046a3c0da001add4f52b6af5e6b0977f95e005ca2e6763"
+    },
+    {
+      "path": "tests/test_source_gate.py",
+      "bytes": 1436,
+      "sha256": "f5b656c7816a270c02869ef82cdae6d98ed06c973cb006d275ae00ba4fb3ccdf"
+    },
+    {
+      "path": "vendor/ncp/conformance/vectors/bad-uuid.json",
+      "bytes": 775,
+      "sha256": "2809687f56ad27b2e145f0b0846b1f43ea55b30a1852545f68bebf2d0debe4e0"
+    },
+    {
+      "path": "vendor/ncp/conformance/vectors/bad-version.json",
+      "bytes": 802,
+      "sha256": "28c9b2d8c73adc4a72630edb04cbda7a218842bf2b70a473136e643a494e166d"
+    },
+    {
+      "path": "vendor/ncp/conformance/vectors/invalid-calendar-date.json",
+      "bytes": 808,
+      "sha256": "84bc8cc97141511b350ec49274ca0d84e3812989e15b4121f5a1268da1dfe988"
+    },
+    {
+      "path": "vendor/ncp/conformance/vectors/lowercase-time.json",
+      "bytes": 808,
+      "sha256": "fb646b7b6ebf7ab700388728b5baf7c2f25c6484c928d444eb2d38147a0f0192"
+    },
+    {
+      "path": "vendor/ncp/conformance/vectors/missing-intent-id-intent.publish.json",
+      "bytes": 780,
+      "sha256": "2b65fcf3493116218198b677de99122f6da0a112aa8cc8b54089e117166a9aa9"
+    },
+    {
+      "path": "vendor/ncp/conformance/vectors/missing-intent-id-intent.update.json",
+      "bytes": 880,
+      "sha256": "510c5da28d1fd666ad5dd31532b74a12b3a0eda06a6ed9c227c90d5706cb895c"
+    },
+    {
+      "path": "vendor/ncp/conformance/vectors/missing-intent-id-intent.withdraw.json",
+      "bytes": 344,
+      "sha256": "76b36b045733ca2bf520b0f1911c18a1338acb7aa20847c1bd2d4487d169fbbb"
+    },
+    {
+      "path": "vendor/ncp/conformance/vectors/missing-intent.update.json",
+      "bytes": 888,
+      "sha256": "0b7b60e9c00e36d1795db46f5d4a7684ac3808589a48348556406c620bc25e42"
+    },
+    {
+      "path": "vendor/ncp/conformance/vectors/non-utc-time.json",
+      "bytes": 813,
+      "sha256": "08b2709f4101d8c10b3efd2f0e25d460fed856909ef1e02e6b53762ad89ea500"
+    },
+    {
+      "path": "vendor/ncp/conformance/vectors/private-network-intent.json",
+      "bytes": 794,
+      "sha256": "347242f1b1d6cda42aee240cc5575770af6e9edb58ec7161d86b0c57712d78f9"
+    },
+    {
+      "path": "vendor/ncp/conformance/vectors/unknown-noncritical-extension.json",
+      "bytes": 906,
+      "sha256": "2fb530e45da88eb46a1aac0fe6434c7db75f996084d9fc8f1bcceb76f0a52228"
+    },
+    {
+      "path": "vendor/ncp/conformance/vectors/uppercase-uuid.json",
+      "bytes": 808,
+      "sha256": "82c28878d7cbe65643b648b3dcf32f1d22b2bea2024476267114fab726c85060"
+    },
+    {
+      "path": "vendor/ncp/conformance/vectors/valid-intent.publish.json",
+      "bytes": 808,
+      "sha256": "2192272a745ea7480c77b629ebe01d665589b86d22c3439bbbc29d94082494e4"
+    },
+    {
+      "path": "vendor/ncp/conformance/vectors/valid-intent.update.json",
+      "bytes": 908,
+      "sha256": "88fcf550a3bad8d177565594482d15e0d26f2d5a14f1f8971e6e4bbb74a9101a"
+    },
+    {
+      "path": "vendor/ncp/conformance/vectors/valid-intent.withdraw.json",
+      "bytes": 372,
+      "sha256": "831c73e6cbf786f35a479666e156e9d7fcdc16e9bdbff7e6d067c5939f6b4257"
+    },
+    {
+      "path": "vendor/ncp/docs/PROVENANCE.md",
+      "bytes": 4950,
+      "sha256": "f97ab142b48b615801bc1530004c029d84a27169f91646879af02730ce115b12"
+    },
+    {
+      "path": "vendor/ncp/LICENSE",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "vendor/ncp/LICENSE-DOCS.md",
+      "bytes": 2500,
+      "sha256": "cfde5b5b91bd06012877d2714ec1698ab9f2628984f1cb6cf95b91f9fd6ab9e5"
+    },
+    {
+      "path": "vendor/ncp/LICENSES/CC-BY-4.0.txt",
+      "bytes": 18615,
+      "sha256": "2ade8c89b8bbe0d859b124a9e47032c8494022f43091e8278ae8e2554a292196"
+    },
+    {
+      "path": "vendor/ncp/NOTICE.md",
+      "bytes": 3230,
+      "sha256": "5ad18b9613c3cf38980649cb3b65244ac99f52675e7973f1886788d822a3f0a2"
+    },
+    {
+      "path": "vendor/ncp/README.md",
+      "bytes": 2664,
+      "sha256": "c95da78b392f8e1a38a57ab64a46b95769bd18d781848613d0e56bdbf78a49be"
+    },
+    {
+      "path": "vendor/ncp/schemas/packet.schema.json",
+      "bytes": 17741,
+      "sha256": "15e59c84cbf98a4e88371695be247fd527d825c54ed2f3f1820f5b3031abafb0"
+    },
+    {
+      "path": "vendor/ncp/selected-cases.json",
+      "bytes": 3921,
+      "sha256": "8e95b272963d56d33e4c8f03236cd69757985a5d996abd0ba12fcdfe41b6f900"
+    },
+    {
+      "path": "vendor/taro-build/LICENSE",
+      "bytes": 6914,
+      "sha256": "984f2dd0f1ef09cefdd374bf43b80f63e6fb70fe9d6247e7ab1379277d6bdc6a"
+    },
+    {
+      "path": "vendor/taro-build/NOTICE.md",
+      "bytes": 848,
+      "sha256": "d99b83c6a3175c6fe6bb8ec166d75db37a0d0d9829fa0142f1a716e294e0ac97"
+    }
+  ],
+  "copy_changes": [
+    {
+      "path": "data/simulated-market/README.md",
+      "reason": "Public status, license scope or current security reporting documentation only"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "reason": "Public status, license scope or current security reporting documentation only"
+    },
+    {
+      "path": "docs/dependency-licenses-python.json",
+      "reason": "Public status, license scope or current security reporting documentation only"
+    },
+    {
+      "path": "docs/DEPLOY.md",
+      "reason": "Public status, license scope or current security reporting documentation only"
+    },
+    {
+      "path": "docs/LOCAL-DESKTOP.md",
+      "reason": "Public status, license scope or current security reporting documentation only"
+    },
+    {
+      "path": "docs/NCP-COMPATIBILITY.md",
+      "reason": "Public status, license scope or current security reporting documentation only"
+    },
+    {
+      "path": "docs/PRIVACY-AND-SECURITY.md",
+      "reason": "Public status, license scope or current security reporting documentation only"
+    },
+    {
+      "path": "docs/PRODUCT-SOURCES.md",
+      "reason": "Public status, license scope or current security reporting documentation only"
+    },
+    {
+      "path": "docs/PROVIDER-STATUS.md",
+      "reason": "Public status, license scope or current security reporting documentation only"
+    },
+    {
+      "path": "docs/RELEASE-CHECKLIST.md",
+      "reason": "Public status, license scope or current security reporting documentation only"
+    },
+    {
+      "path": "docs/SECURITY-BLOCKERS.md",
+      "reason": "Public status, license scope or current security reporting documentation only"
+    },
+    {
+      "path": "docs/SIMULATED-MARKET.md",
+      "reason": "Public status, license scope or current security reporting documentation only"
+    },
+    {
+      "path": "docs/VALIDATION.md",
+      "reason": "Public status, license scope or current security reporting documentation only"
+    },
+    {
+      "path": "LICENSE",
+      "reason": "Public status, license scope or current security reporting documentation only"
+    },
+    {
+      "path": "LICENSE-DOCS.md",
+      "reason": "Public status, license scope or current security reporting documentation only"
+    },
+    {
+      "path": "LICENSE-STATUS.md",
+      "reason": "Public status, license scope or current security reporting documentation only"
+    },
+    {
+      "path": "LICENSES/CC-BY-4.0.txt",
+      "reason": "Public status, license scope or current security reporting documentation only"
+    },
+    {
+      "path": "README.en.md",
+      "reason": "Public status, license scope or current security reporting documentation only"
+    },
+    {
+      "path": "README.md",
+      "reason": "Public status, license scope or current security reporting documentation only"
+    },
+    {
+      "path": "SECURITY.md",
+      "reason": "Public status, license scope or current security reporting documentation only"
+    },
+    {
+      "path": "vendor/ncp/README.md",
+      "reason": "Public status, license scope or current security reporting documentation only"
+    },
+    {
+      "path": "vendor/taro-build/NOTICE.md",
+      "reason": "Public status, license scope or current security reporting documentation only"
+    }
+  ]
+}

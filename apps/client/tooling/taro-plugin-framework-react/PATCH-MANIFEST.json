@@ -1,0 +1,24 @@
+{
+  "format": 1,
+  "maintained_version": "4.3.2-dsa.1",
+  "upstream": {
+    "name": "@tarojs/plugin-framework-react",
+    "version": "4.3.2",
+    "tarball": "https://registry.npmjs.org/@tarojs/plugin-framework-react/-/plugin-framework-react-4.3.2.tgz",
+    "sha256": "9c74ea5396e8c118e18c3b444aa9925b703ff923c484004eb846185416ee1c7a",
+    "integrity": "sha512-OHdREubcbVguHCYaMsTeR/ZYhDmZA4pwY++DAZacdnFBK6uklvZhIVZKfnCZvNCYns810kpksPEewnZfNzfokA==",
+    "license": "MIT",
+    "gitHead": null
+  },
+  "license_file_sha256": "984f2dd0f1ef09cefdd374bf43b80f63e6fb70fe9d6247e7ab1379277d6bdc6a",
+  "changed": [
+    {
+      "path": "package.json",
+      "before_sha256": "d11773c3d0097ec88b8594629990df3812492943ec8c8be10d4d77895d939f87",
+      "after_sha256": "609dbc01d6637a647c8c20842cbca8e75a20125bed1482a6c20cd08e61b1bb97"
+    }
+  ],
+  "removed": [],
+  "runtime_code_changed": false,
+  "validation_status": "Rebuild verification prepared; candidate integration pending"
+}

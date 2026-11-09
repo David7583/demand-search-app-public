@@ -1,0 +1,296 @@
+--- a/index.js
++++ b/index.js
+@@ -1,99 +1,112 @@
+ 'use strict';
+ 
+-var glob = require('glob');
++// Derived from globs 0.1.4 (MIT). See LICENSE, UPSTREAM.json and README-FORK.md.
++// Use the official unbundled entry so the lockfile describes executed dependencies.
++const { glob, globSync } = require('glob/raw');
+ 
+-/**
+- * Expand one or more patterns into an Array of files.
+- *
+- * ## Examples:
+- *
+- * ```
+- * globs('../*.js', function (err, jsfiles) {
+- *   console.log(jsfiles);
+- * })
+- *
+- * globs(['*.js', '../*.js'], function (err, jsfiles) {
+- *   console.log(jsfiles)
+- * })
+- *
+- * globs(['*.js', '../*.js'], { cwd: '/foo' }, function (err, jsfiles) {
+- *   console.log(jsfiles)
+- * })
+- * ```
+- *
+- * @param {String|Array} patterns One or more patterns to match
+- * @param {Object} [options] Options
+- * @param {Function} callback Function which accepts two parameters: err, files
+- */
+-var globs = module.exports = function (patterns, options, callback) {
+-  var pending
+-    , groups = [];
++const forwarded = new Set([
++  'cwd', 'root', 'dot', 'mark', 'nobrace', 'noglobstar', 'noext',
++  'nocase', 'matchBase', 'nodir', 'ignore', 'follow', 'realpath', 'absolute',
++  'signal', 'fs',
++]);
++const MAX_PATTERNS = 256;
++const MAX_PATTERN_LENGTH = 4096;
+ 
+-  // not an Array?  make it so!
+-  if (!Array.isArray(patterns)) {
+-    patterns = [ patterns ];
++function failure(code, message) {
++  const error = new TypeError(message);
++  error.code = code;
++  return error;
++}
++
++function normalize(patterns, options) {
++  const list = Array.isArray(patterns) ? patterns.slice() : [patterns];
++  if (list.length > MAX_PATTERNS) {
++    throw failure('GLOBS_PATTERN_LIMIT', 'At most 256 glob patterns are supported.');
+   }
++  for (const pattern of list) {
++    if (typeof pattern !== 'string') {
++      throw failure('GLOBS_PATTERN_TYPE', 'Each glob pattern must be a string.');
++    }
++    if (pattern.length > MAX_PATTERN_LENGTH) {
++      throw failure('GLOBS_PATTERN_LIMIT', 'A glob pattern may contain at most 4096 UTF-16 code units.');
++    }
++  }
++  if (options == null) options = {};
++  if (typeof options !== 'object' || Array.isArray(options)) {
++    throw failure('GLOBS_OPTIONS_TYPE', 'Glob options must be an object.');
++  }
++  const modern = {
++    // glob 7 treated Windows backslashes as path separators.
++    windowsPathsNoEscape: process.platform === 'win32',
++    braceExpandMax: 10000,
++  };
++  for (const key of Object.keys(options)) {
++    if (key === 'nosort') continue;
++    if (!forwarded.has(key)) {
++      throw failure('GLOBS_UNSUPPORTED_OPTION', 'Unsupported legacy glob option: ' + key);
++    }
++    modern[key] = options[key];
++  }
++  return { list, modern, nosort: !!options.nosort };
++}
+ 
+-  pending = patterns.length;
++function perPattern(pattern, modern) {
++  return { ...modern, ...(modern.realpath ? { absolute: true } : {}), dotRelative: /^\.\//.test(pattern.replace(/\\/g, '/')) };
++}
+ 
+-  // parameter shifting is really horrible, but i'm
+-  // mimicing glob's api...
++function ordered(files, nosort, realpath) {
++  if (process.platform === 'win32' && !realpath) files = files.map(file => file.replace(/\\/g, '/'));
++  return nosort ? files : files.sort((a, b) => a.localeCompare(b, 'en'));
++}
++
++function globs(patterns, options, callback) {
+   if (typeof options === 'function') {
+     callback = options;
+     options = {};
+   }
++  if (typeof callback !== 'function') {
++    throw failure('GLOBS_CALLBACK_TYPE', 'A callback function is required.');
++  }
++  let prepared;
++  try {
++    prepared = normalize(patterns, options);
++  } catch (error) {
++    return process.nextTick(() => callback(error, []));
++  }
++  const { list, modern, nosort } = prepared;
++  let pending = list.length;
++  let finished = false;
++  let groups = [];
++  if (!pending) return process.nextTick(() => callback(null, []));
++  for (const pattern of list) {
++    Promise.resolve().then(() => glob(pattern, perPattern(pattern, modern))).then(
++      (files) => {
++        if (finished) return;
++        // Preserve upstream completion order and duplicates across patterns.
++        groups = groups.concat(ordered(files, nosort, modern.realpath));
++        if (--pending === 0) {
++          finished = true;
++          callback(null, groups);
++        }
++      },
++      (error) => {
++        if (finished) return;
++        finished = true;
++        // scss-bundle 3.1.2 reads files after rejecting; [] avoids an unrelated
++        // TypeError without hiding the original error from its Promise.
++        callback(error, []);
++      },
++    );
++  }
++}
+ 
+-  if (!pending) {
+-    // nothing to do
+-    // ensure callback called asynchronously
+-    return process.nextTick(function() {
+-      callback(null, []);
+-    })
++globs.sync = function (patterns, options) {
++  const { list, modern, nosort } = normalize(patterns, options);
++  let groups = [];
++  for (const pattern of list) {
++    groups = groups.concat(ordered(globSync(pattern, perPattern(pattern, modern)), nosort, modern.realpath));
+   }
+-
+-  // walk the patterns
+-  patterns.forEach(function (pattern) {
+-    // grab the files
+-    glob(pattern, options, function (err, files) {
+-      if (err) {
+-        return callback(err);
+-      }
+-
+-      // add the files to the group
+-      groups = groups.concat(files);
+-
+-      pending -= 1;
+-      // last pattern?
+-      if (!pending) {
+-        // done
+-        return callback(null, groups);
+-      }
+-    });
+-  });
++  return groups;
+ };
+ 
+-/**
+- * Synchronously Expand one or more patterns to an Array of files
+- *
+- * @api public
+- * @param {String|Array} patterns
+- * @param {Object} [options]
+- * @return {Array}
+- */
+-globs.sync = function (patterns, options) {
+-  options = options || {};
+-
+-  var groups = []
+-    , index
+-    , length;
+-
+-  if (!Array.isArray(patterns)) {
+-    patterns = [ patterns ];
+-  }
+-
+-  for (index = 0, length = patterns.length; index < length; index++) {
+-    groups = groups.concat(glob.sync(patterns[index], options));
+-  }
+-
+-  return groups;
+-};
++module.exports = globs;
+--- a/index.d.ts
++++ b/index.d.ts
+@@ -1,29 +1,13 @@
+-import glob = require("glob");
++import type { GlobOptionsWithFileTypesFalse } from "glob";
+ 
+-/**
+- * Performs an asynchronous glob search.
+- * @param pattern Pattern or patterns to be matched.
+- * @param cb The callback invoked when the search completes.
+- */
+-declare function G(pattern: string|string[], cb: (err: Error | null, matches: string[]) => void): void;
+-
+-/**
+- * Performs an asynchronous glob search.
+- * @param pattern Pattern or patterns to be matched.
+- * @param options The glob options to use.
+- * @param cb The callback invoked when the search completes.
+- */
+-declare function G(pattern: string|string[], options: glob.IOptions, cb: (err: Error | null, matches: string[]) => void): void;
+-
+-declare namespace G {
+-
+-    /**
+-     * Performs an synchronous glob search.
+-     * @param pattern Pattern or patterns to be matched.
+-     * @param options The glob options to use.
+-     * @returns The file paths matched by the glob patterns.
+-     */
+-    function sync(pattern: string|string[], options?: glob.IOptions): string[];
++declare namespace globs {
++  type Options = Pick<GlobOptionsWithFileTypesFalse,
++    "cwd" | "root" | "dot" | "mark" | "nobrace" | "noglobstar" | "noext" |
++    "nocase" | "matchBase" | "nodir" | "ignore" | "follow" | "realpath" |
++    "absolute" | "signal" | "fs"> & { nosort?: boolean };
++  type Callback = (error: Error | null, matches: string[]) => void;
++  function sync(patterns: string | string[], options?: Options): string[];
+ }
+-
+-export = G;
+\ No newline at end of file
++declare function globs(patterns: string | string[], callback: globs.Callback): void;
++declare function globs(patterns: string | string[], options: globs.Options, callback: globs.Callback): void;
++export = globs;
+--- a/package.json
++++ b/package.json
+@@ -1,30 +1,28 @@
+ {
+   "name": "globs",
+-  "version": "0.1.4",
++  "version": "0.1.4-dsa.1",
++  "private": true,
++  "description": "Demand Search App compatibility fork of globs 0.1.4 using glob 14; not an upstream release.",
+   "author": "Stephen Mathieson <me@stephenmathieson.com>",
+-  "repository": {
+-    "type": "git",
+-    "url": "git://github.com/stephenmathieson/node-globs.git"
+-  },
++  "contributors": [
++    "Demand Search App maintainers (AI-assisted compatibility changes)"
++  ],
+   "main": "index.js",
+   "types": "index.d.ts",
++  "license": "MIT",
++  "engines": {
++    "node": "18 || 20 || >=22"
++  },
+   "dependencies": {
+-    "glob": "^7.1.1"
++    "glob": "14.0.3"
+   },
+-  "devDependencies": {
+-    "vows": "~0.8.1",
+-    "jshint": "~2.9.4",
+-    "sandboxed-module": "~2.0.3"
+-  },
+-  "description": "An extension of glob, allowing you to provide one or more patterns to match.",
+-  "bugs": {
+-    "url": "https://github.com/stephenmathieson/node-globs/issues"
+-  },
+-  "directories": {
+-    "test": "test"
+-  },
+-  "scripts": {
+-    "test": "make test"
+-  },
+-  "license": "MIT"
++  "files": [
++    "index.js",
++    "index.d.ts",
++    "LICENSE",
++    "Readme.md",
++    "README-FORK.md",
++    "UPSTREAM.json",
++    "globs-0.1.4-to-dsa.1.patch"
++  ]
+ }

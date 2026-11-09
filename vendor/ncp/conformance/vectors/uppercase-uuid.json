@@ -1,0 +1,30 @@
+{
+  "protocol": "ODIP/0.1.3-exp.1",
+  "message_id": "3A517F10-6B4D-4CB1-A614-94F0032D13E1",
+  "message_type": "intent.publish",
+  "timestamp": "2026-11-03T08:11:00Z",
+  "sender": {
+    "participant_id": "user-agent-a",
+    "capabilities": [
+      "express_demand"
+    ]
+  },
+  "intent_id": "need-001",
+  "payload": {
+    "original_text": "父母做饭时用刀不安全，我想减少受伤风险。",
+    "desired_outcome": "降低长者备餐受伤风险",
+    "readiness": "need",
+    "alternatives_acceptable": true,
+    "user_confirmed": true,
+    "constraints": {
+      "budget_ceiling": {
+        "amount": 300,
+        "currency": "CNY"
+      }
+    },
+    "privacy": {
+      "sharing_scope": "selected_participants",
+      "allow_aggregate_analytics": false
+    }
+  }
+}

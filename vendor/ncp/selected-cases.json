@@ -1,0 +1,143 @@
+{
+  "profile": "application-selected-schema-only",
+  "upstream_manifest_sha256": "1cd61b748319bdb2cdf33cb3b8ba9a69cd8cd46846b1ce633f2e16bd63e4c493",
+  "not_full_conformance": true,
+  "network_semantics_not_run": true,
+  "vectors": [
+    {
+      "id": "valid-intent.publish",
+      "layer": "schema",
+      "file": "vectors/valid-intent.publish.json",
+      "schema_valid": true,
+      "expected_code": null,
+      "rule": "S-01",
+      "requires": []
+    },
+    {
+      "id": "valid-intent.update",
+      "layer": "schema",
+      "file": "vectors/valid-intent.update.json",
+      "schema_valid": true,
+      "expected_code": null,
+      "rule": "S-01",
+      "requires": []
+    },
+    {
+      "id": "valid-intent.withdraw",
+      "layer": "schema",
+      "file": "vectors/valid-intent.withdraw.json",
+      "schema_valid": true,
+      "expected_code": null,
+      "rule": "S-01",
+      "requires": []
+    },
+    {
+      "id": "missing-intent.update",
+      "layer": "schema",
+      "file": "vectors/missing-intent.update.json",
+      "schema_valid": false,
+      "expected_code": "SCHEMA_INVALID",
+      "rule": "S-01",
+      "requires": []
+    },
+    {
+      "id": "missing-intent-id-intent.publish",
+      "layer": "schema",
+      "file": "vectors/missing-intent-id-intent.publish.json",
+      "schema_valid": false,
+      "expected_code": "SCHEMA_INVALID",
+      "rule": "S-02",
+      "requires": []
+    },
+    {
+      "id": "missing-intent-id-intent.update",
+      "layer": "schema",
+      "file": "vectors/missing-intent-id-intent.update.json",
+      "schema_valid": false,
+      "expected_code": "SCHEMA_INVALID",
+      "rule": "S-02",
+      "requires": []
+    },
+    {
+      "id": "missing-intent-id-intent.withdraw",
+      "layer": "schema",
+      "file": "vectors/missing-intent-id-intent.withdraw.json",
+      "schema_valid": false,
+      "expected_code": "SCHEMA_INVALID",
+      "rule": "S-02",
+      "requires": []
+    },
+    {
+      "id": "bad-uuid",
+      "layer": "schema",
+      "file": "vectors/bad-uuid.json",
+      "schema_valid": false,
+      "expected_code": "SCHEMA_INVALID",
+      "rule": "S-01",
+      "requires": []
+    },
+    {
+      "id": "uppercase-uuid",
+      "layer": "schema",
+      "file": "vectors/uppercase-uuid.json",
+      "schema_valid": false,
+      "expected_code": "SCHEMA_INVALID",
+      "rule": "S-01",
+      "requires": []
+    },
+    {
+      "id": "bad-version",
+      "layer": "schema",
+      "file": "vectors/bad-version.json",
+      "schema_valid": false,
+      "expected_code": "VERSION_UNSUPPORTED",
+      "rule": "S-03",
+      "requires": []
+    },
+    {
+      "id": "non-utc-time",
+      "layer": "schema",
+      "file": "vectors/non-utc-time.json",
+      "schema_valid": false,
+      "expected_code": "SCHEMA_INVALID",
+      "rule": "S-04",
+      "requires": []
+    },
+    {
+      "id": "invalid-calendar-date",
+      "layer": "schema",
+      "file": "vectors/invalid-calendar-date.json",
+      "schema_valid": false,
+      "expected_code": "SCHEMA_INVALID",
+      "rule": "S-04",
+      "requires": []
+    },
+    {
+      "id": "lowercase-time",
+      "layer": "schema",
+      "file": "vectors/lowercase-time.json",
+      "schema_valid": false,
+      "expected_code": "SCHEMA_INVALID",
+      "rule": "S-04",
+      "requires": []
+    },
+    {
+      "id": "unknown-noncritical-extension",
+      "layer": "schema",
+      "file": "vectors/unknown-noncritical-extension.json",
+      "schema_valid": true,
+      "expected_code": null,
+      "rule": "S-07",
+      "requires": []
+    },
+    {
+      "id": "private-network-intent",
+      "layer": "semantic",
+      "file": "vectors/private-network-intent.json",
+      "schema_valid": true,
+      "expected_code": "PRIVACY_DENIED",
+      "rule": "P-01",
+      "requires": []
+    }
+  ]
+}

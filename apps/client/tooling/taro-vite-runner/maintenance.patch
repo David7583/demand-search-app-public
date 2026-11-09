@@ -1,0 +1,350 @@
+--- upstream/dist/index.h5.js
++++ maintained/dist/index.h5.js
+@@ -14,7 +14,6 @@
+ Object.defineProperty(exports, "__esModule", { value: true });
+ const shared_1 = require("@tarojs/shared");
+ const plugin_legacy_1 = __importDefault(require("@vitejs/plugin-legacy"));
+-const vite_1 = require("vite");
+ const h5_1 = __importDefault(require("./h5"));
+ const utils_1 = require("./utils");
+ const h5_2 = require("./utils/compiler/h5");
+@@ -22,6 +21,7 @@
+ function default_1(appPath, rawTaroConfig) {
+     return __awaiter(this, void 0, void 0, function* () {
+         var _a, _b, _c, _d, _e;
++        const vite_1 = yield import("vite");
+         const viteCompilerContext = new h5_2.TaroCompilerContext(appPath, rawTaroConfig);
+         const { taroConfig } = viteCompilerContext;
+         const isProd = (0, utils_1.getMode)(taroConfig) === 'production';
+@@ -37,7 +37,7 @@
+         }
+         // copy-plugin
+         if ((_b = (_a = taroConfig.copy) === null || _a === void 0 ? void 0 : _a.patterns) === null || _b === void 0 ? void 0 : _b.length) {
+-            plugins.push(require('vite-plugin-static-copy').viteStaticCopy({
++            plugins.push((yield import('vite-plugin-static-copy')).viteStaticCopy({
+                 targets: (0, utils_1.convertCopyOptions)(taroConfig)
+             }));
+         }
+@@ -64,4 +64,3 @@
+     });
+ }
+ exports.default = default_1;
+-//# sourceMappingURL=index.h5.js.map--- upstream/dist/index.mini.js
++++ maintained/dist/index.mini.js
+@@ -13,7 +13,6 @@
+ };
+ Object.defineProperty(exports, "__esModule", { value: true });
+ const shared_1 = require("@tarojs/shared");
+-const vite_1 = require("vite");
+ const mini_1 = __importDefault(require("./mini"));
+ const utils_1 = require("./utils");
+ const mini_2 = require("./utils/compiler/mini");
+@@ -21,6 +20,7 @@
+ function default_1(appPath, rawTaroConfig) {
+     return __awaiter(this, void 0, void 0, function* () {
+         var _a, _b, _c, _d, _e;
++        const vite_1 = yield import("vite");
+         const viteCompilerContext = new mini_2.TaroCompilerContext(appPath, rawTaroConfig);
+         const { taroConfig } = viteCompilerContext;
+         const plugins = [
+@@ -28,7 +28,7 @@
+         ];
+         // copy-plugin
+         if ((_b = (_a = taroConfig.copy) === null || _a === void 0 ? void 0 : _a.patterns) === null || _b === void 0 ? void 0 : _b.length) {
+-            plugins.push(require('vite-plugin-static-copy').viteStaticCopy({
++            plugins.push((yield import('vite-plugin-static-copy')).viteStaticCopy({
+                 targets: (0, utils_1.convertCopyOptions)(taroConfig)
+             }));
+         }
+@@ -50,4 +50,3 @@
+     });
+ }
+ exports.default = default_1;
+-//# sourceMappingURL=index.mini.js.map--- upstream/dist/index.harmony.js
++++ maintained/dist/index.harmony.js
+@@ -13,7 +13,6 @@
+ };
+ Object.defineProperty(exports, "__esModule", { value: true });
+ const shared_1 = require("@tarojs/shared");
+-const vite_1 = require("vite");
+ const harmony_1 = __importDefault(require("./harmony"));
+ const utils_1 = require("./utils");
+ const harmony_2 = require("./utils/compiler/harmony");
+@@ -21,6 +20,7 @@
+ function default_1(appPath, rawTaroConfig) {
+     return __awaiter(this, void 0, void 0, function* () {
+         var _a, _b, _c, _d, _e;
++        const vite_1 = yield import("vite");
+         const viteCompilerContext = new harmony_2.TaroCompilerContext(appPath, rawTaroConfig);
+         const { taroConfig } = viteCompilerContext;
+         const plugins = [
+@@ -28,7 +28,7 @@
+         ];
+         // copy-plugin
+         if ((_b = (_a = taroConfig.copy) === null || _a === void 0 ? void 0 : _a.patterns) === null || _b === void 0 ? void 0 : _b.length) {
+-            plugins.push(require('vite-plugin-static-copy').viteStaticCopy({
++            plugins.push((yield import('vite-plugin-static-copy')).viteStaticCopy({
+                 targets: (0, utils_1.convertCopyOptions)(taroConfig)
+             }));
+         }
+@@ -46,4 +46,3 @@
+     });
+ }
+ exports.default = default_1;
+-//# sourceMappingURL=index.harmony.js.map--- upstream/dist/h5/config.js
++++ maintained/dist/h5/config.js
+@@ -54,7 +54,7 @@
+     function getSassOption() {
+         return __awaiter(this, void 0, void 0, function* () {
+             const sassLoaderOption = taroConfig.sassLoaderOption;
+-            const option = Object.assign(Object.assign({}, (yield (0, runner_utils_1.getSassLoaderOption)(taroConfig))), sassLoaderOption);
++            const option = Object.assign(Object.assign({}, (yield (0, runner_utils_1.getSassLoaderOption)(taroConfig))), sassLoaderOption, { api: 'legacy' });
+             return {
+                 scss: option,
+                 sass: option,
+@@ -98,7 +98,7 @@
+     if ((0, shared_1.isBoolean)(serverOption.open) || (0, shared_1.isString)(serverOption.open)) {
+         open = serverOption.open;
+     }
+-    let cors = true;
++    let cors = false;
+     if ((0, shared_1.isBoolean)(serverOption.cors) || (0, shared_1.isObject)(serverOption.cors)) {
+         cors = serverOption.cors;
+     }
+@@ -239,8 +239,8 @@
+             });
+         }),
+         transformIndexHtml: {
+-            enforce: 'pre',
+-            transform(html) {
++            order: 'pre',
++            handler(html) {
+                 // mpa 模式关于 html 的处理已经解藕到 mpa.ts
+                 if (isMultiRouterMode)
+                     return html;
+@@ -253,4 +253,3 @@
+     };
+ }
+ exports.default = default_1;
+-//# sourceMappingURL=config.js.map--- upstream/dist/h5/mpa.js
++++ maintained/dist/h5/mpa.js
+@@ -138,8 +138,8 @@
+                 return htmlTemplate;
+         },
+         transformIndexHtml: {
+-            enforce: 'pre',
+-            transform(html, ctx) {
++            order: 'pre',
++            handler(html, ctx) {
+                 var _a, _b;
+                 const { originalUrl, path: filePath } = ctx;
+                 const { configPath } = app;
+@@ -163,4 +163,3 @@
+     };
+ }
+ exports.default = default_1;
+-//# sourceMappingURL=mpa.js.map--- upstream/dist/mini/config.js
++++ maintained/dist/mini/config.js
+@@ -130,7 +130,7 @@
+                     ? importer.unshift(...sassLoaderOption.importer)
+                     : importer.unshift(sassLoaderOption.importer);
+             }
+-            const option = Object.assign(Object.assign(Object.assign({}, (yield (0, runner_utils_1.getSassLoaderOption)(taroConfig))), sassLoaderOption), { importer });
++            const option = Object.assign(Object.assign(Object.assign({}, (yield (0, runner_utils_1.getSassLoaderOption)(taroConfig))), sassLoaderOption), { api: 'legacy', importer });
+             return {
+                 scss: option,
+                 sass: option,
+@@ -228,6 +228,7 @@
+                     lib: {
+                         entry: taroConfig.entry.app,
+                         formats: ['cjs'],
++                        cssFileName: 'style',
+                     },
+                     watch: taroConfig.isWatch ? {} : null,
+                     chunkSizeWarningLimit: Number.MAX_SAFE_INTEGER,
+@@ -290,4 +291,3 @@
+     };
+ }
+ exports.default = default_1;
+-//# sourceMappingURL=config.js.map--- upstream/dist/mini/emit.js
++++ maintained/dist/mini/emit.js
+@@ -75,7 +75,7 @@
+                         // 先生成 base 模板：buildPageTemplate 的平台覆写（如微信小程序的 page-meta）
+                         // 依赖 buildTemplate 填充的组件信息，而页面模板先于 base 模板生成
+                         const baseTemplate = template.buildTemplate(component_1.componentConfig);
+-                        viteCompilerContext.pages.forEach(page => {
++                        for (const page of viteCompilerContext.pages) {
+                             const pageConfig = page.config;
+                             if (!page.isNative) {
+                                 const usingComponents = pageConfig.usingComponents = Object.assign({}, pageConfig.usingComponents);
+@@ -88,7 +88,7 @@
+                                     usingComponents[constants_1.baseCompName] = importBaseCompPath;
+                                 }
+                                 const importBaseTemplatePath = (0, helper_1.promoteRelativePath)(node_path_1.default.relative(page.scriptPath, node_path_1.default.join(sourceDir, viteCompilerContext.getTemplatePath(constants_1.baseTemplateName))));
+-                                generateTemplateFile(this, viteCompilerContext, {
++                                yield generateTemplateFile(this, viteCompilerContext, {
+                                     filePath: page.scriptPath,
+                                     content: template.buildPageTemplate(importBaseTemplatePath, { content: pageConfig, path: page.name })
+                                 });
+@@ -97,7 +97,7 @@
+                                 filePath: page.name,
+                                 config: pageConfig
+                             });
+-                        });
++                        }
+                         // emit native components' json
+                         for (const comp of viteCompilerContext.nativeComponents.values()) {
+                             if (comp.isPackage)
+@@ -108,7 +108,7 @@
+                             });
+                         }
+                         // emit: base.xml（内容已在生成页面模板前计算，供 buildPageTemplate 覆写读取组件信息）
+-                        generateTemplateFile(this, viteCompilerContext, {
++                        yield generateTemplateFile(this, viteCompilerContext, {
+                             filePath: constants_1.baseTemplateName,
+                             content: baseTemplate
+                         });
+@@ -136,7 +136,7 @@
+                                 filePath: constants_1.baseCompName,
+                                 config: baseCompConfig
+                             });
+-                            generateTemplateFile(this, viteCompilerContext, {
++                            yield generateTemplateFile(this, viteCompilerContext, {
+                                 filePath: constants_1.baseCompName,
+                                 content: template.buildBaseComponentTemplate(viteCompilerContext.fileType.templ)
+                             });
+@@ -166,7 +166,7 @@
+                                     }
+                                 }
+                             });
+-                            generateTemplateFile(this, viteCompilerContext, {
++                            yield generateTemplateFile(this, viteCompilerContext, {
+                                 filePath: constants_1.customWrapperName,
+                                 content: template.buildCustomComponentTemplate(viteCompilerContext.fileType.templ)
+                             });
+@@ -236,13 +236,13 @@
+         source
+     });
+ }
+-function generateTemplateFile(ctx, viteCompilerContext, options) {
++async function generateTemplateFile(ctx, viteCompilerContext, options) {
+     var _a;
+     let source = options.content;
+     const fileName = viteCompilerContext.getTemplatePath((0, utils_1.getComponentName)(viteCompilerContext, options.filePath));
+     if ((_a = viteCompilerContext.taroConfig.minifyXML) === null || _a === void 0 ? void 0 : _a.collapseWhitespace) {
+-        const minify = require('html-minifier').minify;
+-        source = minify(source, {
++        const minify = require('html-minifier-terser').minify;
++        source = await minify(source, {
+             collapseWhitespace: true,
+             keepClosingSlash: true
+         });
+@@ -264,4 +264,3 @@
+         source: options.content
+     });
+ }
+-//# sourceMappingURL=emit.js.map--- upstream/package.json
++++ maintained/package.json
+@@ -1,11 +1,17 @@
+ {
+   "name": "@tarojs/vite-runner",
+-  "version": "4.3.2",
++  "version": "4.3.2-dsa.1",
+   "main": "index.js",
+   "license": "MIT",
+   "files": [
+     "index.js",
+-    "dist"
++    "dist",
++    "MAINTENANCE.md",
++    "PATCH-MANIFEST.json",
++    "PATCHES.json",
++    "REBUILD.py",
++    "maintenance.patch",
++    "tests"
+   ],
+   "dependencies": {
+     "@ampproject/remapping": "^2.3.0",
+@@ -15,12 +21,11 @@
+     "@rollup/plugin-terser": "^0.4.4",
+     "@rollup/pluginutils": "^5.1.0",
+     "@tarojs/parse-css-to-stylesheet": "^0.0.69",
+-    "@vitejs/plugin-legacy": "^4.1.1",
++    "@vitejs/plugin-legacy": "6.1.1",
+     "acorn-walk": "^8.3.2",
+     "autoprefixer": "^10.4.19",
+     "connect-history-api-fallback": "^2.0.0",
+     "fast-glob": "^3.3.2",
+-    "html-minifier": "^4.0.0",
+     "json5": "^2.2.3",
+     "lodash": "^4.17.21",
+     "magic-string": "^0.30.10",
+@@ -33,7 +38,7 @@
+     "regenerator-runtime": "0.11",
+     "sax": "1.2.4",
+     "stylelint": "^16.4.0",
+-    "vite-plugin-static-copy": "^0.17.1",
++    "vite-plugin-static-copy": "2.3.2",
+     "@tarojs/helper": "4.3.2",
+     "@tarojs/runtime": "4.3.2",
+     "babel-plugin-transform-taroapi": "4.3.2",
+@@ -41,23 +46,24 @@
+     "postcss-plugin-constparse": "4.3.2",
+     "postcss-pxtransform": "4.3.2",
+     "@tarojs/runner-utils": "4.3.2",
+-    "@tarojs/shared": "4.3.2"
++    "@tarojs/shared": "4.3.2",
++    "html-minifier-terser": "7.2.0"
+   },
+   "devDependencies": {
+     "@babel/types": "^7.24.0",
+     "@types/babel__core": "^7.20.5",
+     "@types/sax": "^1.2.4",
+     "less": "^4.2.0",
+-    "rollup": "^3.29.4",
++    "rollup": "^4.34.9",
+     "sass": "1.44.0",
+     "stylus": "^0.63.0",
+     "terser": "^5.30.4",
+-    "vite": "^4.2.0",
++    "vite": "6.4.5",
+     "@tarojs/taro": "4.3.2"
+   },
+   "peerDependencies": {
+     "postcss": "^8",
+-    "vite": "^4",
++    "vite": "6.4.5",
+     "@tarojs/runtime": "4.3.2"
+   },
+   "scripts": {
+@@ -67,5 +73,7 @@
+     "mv:comp": "node ./mv-comp.js",
+     "test": "vitest run",
+     "test:ci": "vitest run --coverage"
+-  }
+-}+  },
++  "private": true,
++  "description": "Project-maintained Taro 4.3.2 Vite 6 compatibility fork; not an upstream release."
++}
+--- upstream/dist/index.h5.js.map
++++ /dev/null
+@@ -1 +0,0 @@
+-{"version":3,"file":"index.h5.js","sourceRoot":"","sources":["../src/index.h5.ts"],"names":[],"mappings":";;;;;;;;;;;;;;AAAA,2CAAyC;AACzC,0EAA0C;AAC1C,+BAA0C;AAE1C,8CAA2B;AAC3B,mCAAqD;AACrD,4CAAyD;AACzD,iDAAmD;AAKnD,mBAA+B,OAAe,EAAE,aAAgC;;;QAC9E,MAAM,mBAAmB,GAAG,IAAI,wBAAmB,CAAC,OAAO,EAAE,aAAa,CAAC,CAAA;QAC3E,MAAM,EAAE,UAAU,EAAE,GAAG,mBAAmB,CAAA;QAC1C,MAAM,MAAM,GAAG,IAAA,eAAO,EAAC,UAAU,CAAC,KAAK,YAAY,CAAA;QAEnD,MAAM,OAAO,GAA0B;YACrC,IAAA,YAAQ,EAAC,mBAAmB,CAAC;SAC9B,CAAA;QAED,gBAAgB;QAChB,IAAI,UAAU,CAAC,MAAM,IAAI,MAAM,EAAE,CAAC;YAChC,OAAO,CAAC,IAAI,CAAC,IAAA,uBAAM,EAAC;gBAClB,kBAAkB,EAAE,KAAK;gBACzB,OAAO,EAAE,mBAAmB,CAAC,YAAY;aAC1C,CAAC,CAAC,CAAA;QACL,CAAC;QAED,cAAc;QACd,IAAI,MAAA,MAAA,UAAU,CAAC,IAAI,0CAAE,QAAQ,0CAAE,MAAM,EAAE,CAAC;YACtC,OAAO,CAAC,IAAI,CAAC,OAAO,CAAC,yBAAyB,CAAC,CAAC,cAAc,CAAC;gBAC7D,OAAO,EAAE,IAAA,0BAAkB,EAAC,UAAU,CAAC;aACxC,CAAC,CAAC,CAAA;QACL,CAAC;QAED,sBAAsB;QACtB,IAAI,CAAC,IAAA,iBAAQ,EAAC,UAAU,CAAC,QAAQ,CAAC,KAAI,MAAA,MAAA,UAAU,CAAC,QAAQ,0CAAE,WAAW,0CAAE,MAAM,CAAA,EAAE,CAAC;YAC/E,OAAO,CAAC,IAAI,CAAC,GAAG,UAAU,CAAC,QAAQ,CAAC,WAAW,CAAC,CAAA;QAClD,CAAC;QAED,MAAM,YAAY,GAAiB;YACjC,UAAU,EAAE,KAAK;YACjB,OAAO;SACR,CAAA;QAED,MAAA,UAAU,CAAC,gBAAgB,2DACzB,YAAY,EACZ;YACE,eAAe,EAAf,2BAAe;SAChB,EACD,mBAAmB,CACpB,CAAA;QAED,IAAI,MAAM,EAAE,CAAC;YACX,MAAM,IAAA,YAAK,EAAC,YAAY,CAAC,CAAA;QAC3B,CAAC;aAAM,CAAC;YACN,qBAAqB;YACrB,MAAM,MAAM,GAAG,MAAM,IAAA,mBAAY,EAAC,YAAY,CAAC,CAAA;YAC/C,MAAM,MAAM,CAAC,MAAM,EAAE,CAAA;YACrB,MAAM,CAAC,SAAS,EAAE,CAAA;QACpB,CAAC;IACH,CAAC;CAAA;AAlDD,4BAkDC"}--- upstream/dist/index.mini.js.map
++++ /dev/null
+@@ -1 +0,0 @@
+-{"version":3,"file":"index.mini.js","sourceRoot":"","sources":["../src/index.mini.ts"],"names":[],"mappings":";;;;;;;;;;;;;;AAAA,2CAAqD;AACrD,+BAA4B;AAE5B,kDAA+B;AAC/B,mCAA4C;AAC5C,gDAA2D;AAC3D,iDAAmD;AAKnD,mBAA+B,OAAe,EAAE,aAAkC;;;QAChF,MAAM,mBAAmB,GAAG,IAAI,0BAAmB,CAAC,OAAO,EAAE,aAAa,CAAC,CAAA;QAC3E,MAAM,EAAE,UAAU,EAAE,GAAG,mBAAmB,CAAA;QAC1C,MAAM,OAAO,GAA0B;YACrC,IAAA,cAAU,EAAC,mBAAmB,CAAC;SAChC,CAAA;QAED,cAAc;QACd,IAAI,MAAA,MAAA,UAAU,CAAC,IAAI,0CAAE,QAAQ,0CAAE,MAAM,EAAE,CAAC;YACtC,OAAO,CAAC,IAAI,CAAC,OAAO,CAAC,yBAAyB,CAAC,CAAC,cAAc,CAAC;gBAC7D,OAAO,EAAE,IAAA,0BAAkB,EAAC,UAAU,CAAC;aACxC,CAAC,CAAC,CAAA;QACL,CAAC;QAED,sBAAsB;QACtB,IAAI,CAAC,IAAA,iBAAQ,EAAC,UAAU,CAAC,QAAQ,CAAC,KAAI,MAAA,MAAA,UAAU,CAAC,QAAQ,0CAAE,WAAW,0CAAE,MAAM,CAAA,EAAE,CAAC;YAC/E,OAAO,CAAC,IAAI,CAAC,GAAG,UAAU,CAAC,QAAQ,CAAC,WAAW,CAAC,CAAA;QAClD,CAAC;QAED,MAAM,YAAY,GAAe;YAC/B,OAAO;SACR,CAAA;QAED,MAAM,qBAAqB,GAAG,UAAU,CAAC,qBAAqB,CAAA;QAC9D,IAAI,IAAA,mBAAU,EAAC,qBAAqB,CAAC,EAAE,CAAC;YACtC,qBAAqB,CAAC,2BAAe,EAAE,UAAU,CAAC,CAAA;QACpD,CAAC;QAED,MAAA,UAAU,CAAC,gBAAgB,2DACzB,YAAY,EACZ;YACE,eAAe,EAAf,2BAAe;SAChB,EACD,mBAAmB,CACpB,CAAA;QAED,MAAM,IAAA,YAAK,EAAC,YAAY,CAAC,CAAA;IAC3B,CAAC;CAAA;AArCD,4BAqCC"}--- upstream/dist/index.harmony.js.map
++++ /dev/null
+@@ -1 +0,0 @@
+-{"version":3,"file":"index.harmony.js","sourceRoot":"","sources":["../src/index.harmony.ts"],"names":[],"mappings":";;;;;;;;;;;;;;AAAA,2CAAyC;AACzC,+BAA6C;AAE7C,wDAAqC;AACrC,mCAA4C;AAC5C,sDAA8D;AAC9D,iDAAmD;AAInD,mBAA+B,OAAe,EAAE,aAAqC;;;QACnF,MAAM,mBAAmB,GAAG,IAAI,6BAAmB,CAAC,OAAO,EAAE,aAAa,CAAC,CAAA;QAC3E,MAAM,EAAE,UAAU,EAAE,GAAG,mBAAmB,CAAA;QAE1C,MAAM,OAAO,GAA0B;YACrC,IAAA,iBAAa,EAAC,mBAAmB,CAAC;SACnC,CAAA;QAED,cAAc;QACd,IAAI,MAAA,MAAA,UAAU,CAAC,IAAI,0CAAE,QAAQ,0CAAE,MAAM,EAAE,CAAC;YACtC,OAAO,CAAC,IAAI,CAAC,OAAO,CAAC,yBAAyB,CAAC,CAAC,cAAc,CAAC;gBAC7D,OAAO,EAAE,IAAA,0BAAkB,EAAC,UAAU,CAAC;aACxC,CAAC,CAAC,CAAA;QACL,CAAC;QAED,sBAAsB;QACtB,IAAI,CAAC,IAAA,iBAAQ,EAAC,UAAU,CAAC,QAAQ,CAAC,KAAI,MAAA,MAAA,UAAU,CAAC,QAAQ,0CAAE,WAAW,0CAAE,MAAM,CAAA,EAAE,CAAC;YAC/E,OAAO,CAAC,IAAI,CAAC,GAAG,UAAU,CAAC,QAAQ,CAAC,WAAW,CAAC,CAAA;QAClD,CAAC;QAED,MAAM,YAAY,GAAe;YAC/B,OAAO;SACR,CAAA;QAED,MAAA,UAAU,CAAC,gBAAgB,2DACzB,YAAY,EACZ;YACE,eAAe,EAAf,2BAAe;SAChB,EACD,mBAAmB,CACpB,CAAA;QACD,MAAM,IAAA,YAAK,EAAC,YAAY,CAAC,CAAA;IAC3B,CAAC;CAAA;AAhCD,4BAgCC"}--- upstream/dist/h5/config.js.map
++++ /dev/null
+@@ -1 +0,0 @@
+-{"version":3,"file":"config.js","sourceRoot":"","sources":["../../src/h5/config.ts"],"names":[],"mappings":"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"}--- upstream/dist/h5/mpa.js.map
++++ /dev/null
+@@ -1 +0,0 @@
+-{"version":3,"file":"mpa.js","sourceRoot":"","sources":["../../src/h5/mpa.ts"],"names":[],"mappings":";;;;;;;;;;;;;;AAAA,0DAA4B;AAE5B,2CAAoD;AACpD,gGAAkD;AAElD,sDAA+D;AAC/D,oCAAqH;AACrH,kDAAgE;AAChE,wCAA6C;AAK7C,mBAAyB,mBAA0C;;IACjE,MAAM,EAAE,KAAK,EAAE,UAAU,EAAE,GAAG,EAAE,OAAO,EAAE,SAAS,EAAE,GAAG,EAAE,GAAG,mBAAmB,CAAA;IAC/E,MAAM,QAAQ,GAAG,CAAA,MAAA,UAAU,CAAC,MAAM,0CAAE,QAAQ,KAAI,EAAE,CAAA;IAClD,MAAM,YAAY,GAAG,WAAE,CAAC,YAAY,CAAC,mBAAI,CAAC,IAAI,CAAC,OAAO,EAAE,UAAU,CAAC,UAAU,IAAI,KAAK,EAAE,YAAY,CAAC,CAAC,CAAC,QAAQ,EAAE,CAAA;IACjH,MAAM,MAAM,GAAG,IAAA,eAAO,EAAC,UAAU,CAAC,KAAK,YAAY,CAAA;IAEnD,MAAM,eAAe,GAAG,IAAA,oCAAuB,EAAC;QAC9C,WAAW,EAAE,UAAU,CAAC,WAAW;QACnC,WAAW,EAAE,UAAU,CAAC,WAAW;QACnC,MAAM,EAAE,UAAU,CAAC,OAAO;QAC1B,aAAa,EAAE,UAAU,CAAC,aAAa,IAAI,EAAE;KAC9C,CAAC,CAAA;IAEF,MAAM,CAAC,EAAE,iBAAiB,CAAC,GAAG,eAAe,CAAC,IAAI,CAAC,CAAC,CAAC,IAAI,CAAC,EAAE,EAAE,CAAC,IAAI,KAAK,qBAAqB,CAAC,IAAI,EAAE,CAAA;IAEpG,SAAS,YAAY,CACnB,GAAW,EACX,OAAe,EACf,YAAsB;QAEtB,OAAO;YACL,IAAI,EAAE,IAAI,MAAM,CAAC,IAAI,GAAG,OAAO,CAAC;YAChC,EAAE,CAAC,EAAE,SAAS,EAAE;gBACd,MAAM,QAAQ,GAAW,SAAS,CAAC,QAAQ,CAAA;gBAC3C,MAAM,cAAc,GAAG,QAAQ,CAAC,OAAO,CAAC,OAAO,EAAE,GAAG,CAAC,CAAA;gBACrD,MAAM,QAAQ,GAAG,mBAAI,CAAC,OAAO,CAAC,OAAO,EAAE,YAAY,CAAC,CAAA;gBACpD,IAAI,cAAc,KAAK,GAAG,EAAE,CAAC;oBAC3B,OAAO,QAAQ,CAAA;gBACjB,CAAC;gBACD,MAAM,QAAQ,GAAG,YAAY,CAAC,IAAI,CAAC,CAAC,IAAI,EAAE,EAAE,CAC1C,QAAQ,CAAC,UAAU,CAAC,mBAAI,CAAC,OAAO,CAAC,OAAO,EAAE,IAAI,CAAC,CAAC,CACjD,CAAA;gBACD,OAAO,QAAQ,CAAC,CAAC,CAAC,cAAc,CAAC,CAAC,CAAC,QAAQ,CAAA;YAC7C,CAAC;SACF,CAAA;IACH,CAAC;IAED,SAAS,cAAc,CAAE,QAAgB;QACvC,OAAO,KAAK,CAAC,IAAI,CAAC,CAAC,EAAE,IAAI,EAAE,EAAE,EAAE;YAC7B,MAAM,QAAQ,GAAG,IAAA,wBAAe,EAAC,mBAAI,CAAC,IAAI,CAAC,QAAQ,EAAE,IAAI,CAAC,CAAC,CAAA;YAC3D,MAAM,QAAQ,GAAG,mBAAI,CAAC,IAAI,CAAC,OAAO,EAAE,UAAU,CAAC,UAAU,IAAI,KAAK,EAAE,GAAG,QAAQ,OAAO,CAAC,CAAA;YACvF,OAAO,QAAQ,KAAK,QAAQ,CAAA;QAC9B,CAAC,CAAC,CAAA;IACJ,CAAC;IAED,SAAS,QAAQ;QACf,MAAM,KAAK,GAAG,EAAE,CAAA;QAChB,KAAK,CAAC,OAAO,CAAC,CAAC,IAAI,EAAE,EAAE;YACrB,MAAM,EAAE,IAAI,EAAE,GAAG,IAAI,CAAA;YACrB,MAAM,QAAQ,GAAG,IAAA,wBAAe,EAAC,mBAAI,CAAC,IAAI,CAAC,QAAQ,EAAE,IAAI,CAAC,CAAC,CAAA;YAC3D,MAAM,QAAQ,GAAG,mBAAI,CAAC,IAAI,CAAC,OAAO,EAAE,UAAU,CAAC,UAAU,IAAI,KAAK,EAAE,GAAG,QAAQ,OAAO,CAAC,CAAA;YACvF,KAAK,CAAC,QAAQ,CAAC,GAAG,QAAQ,CAAA;QAC5B,CAAC,CAAC,CAAA;QACF,OAAO,KAAK,CAAA;IACd,CAAC;IAED,OAAO;QACL,IAAI,EAAE,kBAAkB;QACxB,OAAO,EAAE,KAAK;QACd,UAAU;YACR,MAAM,eAAe,GAAG,CAAC,QAAgB,EAAE,EAAE;gBAC3C,MAAM,IAAI,GAAG,KAAK,CAAC,IAAI,CAAC,CAAC,EAAE,IAAI,EAAE,EAAE,EAAE,CAAC,IAAI,KAAK,QAAQ,CAAC,IAAI,KAAK,CAAC,CAAC,CAAiB,CAAA;gBACpF,MAAM,YAAY,GAAG;oBACnB,oBAAoB;oBACpB,kBAAkB,IAAA,yBAAiB,EAAC,IAAI,CAAC,EAAE;oBAC3C,sBAAsB,QAAQ,GAAG;iBAClC,CAAC,IAAI,CAAC,IAAI,CAAC,CAAA;gBACZ,OAAO,YAAY,CAAA;YACrB,CAAC,CAAA;YACD,mBAAmB,CAAC,UAAU,GAAG;gBAC/B,aAAa,EAAE,mBAAmB;gBAClC,eAAe;aAChB,CAAA;QACH,CAAC;QACD,MAAM,EAAE,GAAG,EAAE,CAAC,CAAC;YACb,KAAK,EAAE;gBACL,aAAa,EAAE;oBACb,KAAK,EAAE,QAAQ,EAAE;oBACjB,MAAM,EAAE;wBACN,cAAc,EAAE,CAAC,SAAS,EAAE,EAAE,CAAC,MAAM,SAAS,CAAC,IAAI,YAAY;qBAChE;iBACF;aACF;SACF,CAAC;QACF,eAAe,CAAE,MAAM;;YACrB,MAAM,QAAQ,GAAgC,EAAE,CAAA;YAChD,MAAM,KAAK,GAAG,MAAM,CAAC,MAAM,CAAC,MAAM,CAAC,KAAK,IAAI,EAAE,CAAA;YAC9C,MAAM,SAAS,GAAG,MAAM,CAAC,IAAI,CAAC,KAAK,CAAC,CAAA;YACpC,MAAM,OAAO,GAAG,MAAA,MAAM,CAAC,MAAM,CAAC,IAAI,mCAAI,GAAG,CAAA;YACzC,KAAK,CAAC,OAAO,CAAC,CAAC,EAAE,IAAI,EAAE,EAAE,EAAE;gBACzB,MAAM,QAAQ,GAAG,IAAA,wBAAe,EAAC,mBAAI,CAAC,IAAI,CAAC,QAAQ,EAAE,IAAI,CAAC,CAAC,CAAA;gBAC3D,QAAQ,CAAC,IAAI,CAAC,YAAY,CAAC,QAAQ,EAAE,OAAO,EAAE,SAAS,CAAC,CAAC,CAAA;YAC3D,CAAC,CAAC,CAAA;YACF,MAAM,CAAC,WAAW,CAAC,GAAG,CAAC,IAAA,sCAAO,EAAC;gBAC7B,cAAc,EAAE,SAAS;gBACzB,iBAAiB,EAAE,CAAC,WAAW,EAAE,uBAAuB,CAAC;gBACzD,QAAQ,EAAE,QAAQ;aACnB,CAAC,CAAC,CAAA;QACL,CAAC;QACK,SAAS,CAAE,MAAM,EAAE,QAAQ,EAAE,OAAO;;gBACxC,aAAa;gBACb,MAAM,OAAO,GAAG,cAAc,CAAC,MAAM,CAAC,CAAA;gBACtC,IAAI,OAAO;oBAAE,OAAO,MAAM,CAAA;gBAE1B,oBAAoB;gBACpB,MAAM,QAAQ,GAAG,MAAM,IAAI,CAAC,OAAO,CAAC,MAAM,EAAE,QAAQ,kCAAO,OAAO,KAAE,QAAQ,EAAE,IAAI,IAAG,CAAA;gBACrF,IAAI,CAAA,QAAQ,aAAR,QAAQ,uBAAR,QAAQ,CAAE,EAAE,KAAI,KAAK,CAAC,IAAI,CAAC,CAAC,EAAE,UAAU,EAAE,EAAE,EAAE,CAAC,QAAQ,CAAC,EAAE,CAAC,UAAU,CAAC,UAAU,CAAC,CAAC,EAAE,CAAC;oBACvF,6BAA6B;oBAC7B,MAAM,WAAW,GAAG,IAAA,sBAAc,EAAC,MAAM,CAAC,CAAA;oBAC1C,MAAM,QAAQ,GAAG,WAAW,aAAX,WAAW,uBAAX,WAAW,CAAG,0BAAc,CAAC,CAAA;oBAC9C,MAAM,MAAM,GAAG,mBAAI,CAAC,KAAK,CAAC,QAAQ,CAAC,EAAE,CAAC,CAAC,GAAG,CAAA;oBAC1C,MAAM,MAAM,GAAG;wBACb,CAAC,uBAAW,CAAC,EAAE,MAAM;wBACrB,CAAC,0BAAc,CAAC,EAAE,QAAkB;qBACrC,CAAA;oBACD,MAAM,WAAW,GAAG,IAAA,2BAAmB,EAAC,MAAM,CAAC,CAAA;oBAC/C,OAAO,IAAA,iCAAyB,EAAC,MAAM,GAAG,IAAI,WAAW,EAAE,CAAC,CAAA;gBAC9D,CAAC;gBAED,OAAO,IAAI,CAAA;YACb,CAAC;SAAA;QACD,IAAI,CAAE,EAAE;YACN,aAAa;YACb,MAAM,WAAW,GAAG,cAAc,CAAC,EAAE,CAAC,CAAA;YACtC,IAAI,WAAW;gBAAE,OAAO,YAAY,CAAA;QACtC,CAAC;QACD,kBAAkB,EAAE;YAClB,OAAO,EAAE,KAAK;YACd,SAAS,CAAC,IAAI,EAAE,GAAG;;gBACjB,MAAM,EAAE,WAAW,EAAE,IAAI,EAAE,QAAQ,EAAE,GAAG,GAAG,CAAA;gBAC3C,MAAM,EAAE,UAAU,EAAE,GAAG,GAAG,CAAA;gBAC1B,IAAI,YAAY,GAAG,UAAU,CAAC,OAAO,CAAC,SAAS,EAAE,EAAE,CAAC,CAAA;gBACpD,IAAI,IAAI,CAAA;gBACR,IAAI,MAAM,EAAE,CAAC;oBACX,IAAI,GAAG,MAAA,KAAK,CAAC,MAAM,CAAC,CAAC,EAAE,IAAI,EAAE,EAAE,EAAE,CAAC,QAAQ,aAAR,QAAQ,uBAAR,QAAQ,CAAE,UAAU,CAAC,IAAI,IAAA,wBAAe,EAAC,mBAAI,CAAC,IAAI,CAAC,QAAQ,EAAE,IAAI,CAAC,CAAC,EAAE,CAAC,CAAC,0CAAG,CAAC,CAAC,CAAA;gBAChH,CAAC;qBAAM,CAAC;oBACN,IAAI,GAAG,MAAA,KAAK,CAAC,MAAM,CAAC,CAAC,EAAE,IAAI,EAAE,EAAE,EAAE,CAAC,WAAW,aAAX,WAAW,uBAAX,WAAW,CAAE,UAAU,CAAC,IAAI,IAAA,wBAAe,EAAC,mBAAI,CAAC,IAAI,CAAC,QAAQ,EAAE,IAAI,CAAC,CAAC,EAAE,CAAC,CAAC,0CAAG,CAAC,CAAC,CAAA;gBACnH,CAAC;gBACD,IAAI,IAAI,EAAE,CAAC;oBACT,MAAM,MAAM,GAAG,EAAE,CAAC,0BAAc,CAAC,EAAE,IAAI,CAAC,IAAI,EAAE,CAAA;oBAC9C,MAAM,WAAW,GAAG,IAAA,2BAAmB,EAAC,MAAM,CAAC,CAAA;oBAC/C,YAAY,GAAG,IAAI,CAAC,UAAU,CAAC,OAAO,CAAC,SAAS,EAAE,EAAE,CAAC,GAAG,IAAI,WAAW,EAAE,CAAA;gBAC3E,CAAC;gBACD,MAAM,UAAU,GAAG,IAAA,oBAAa,EAAC,YAAY,EAAE,iBAAiB,CAAC,CAAA;gBAEjE,OAAO,IAAI,CAAC,OAAO,CAAC,2DAA2D,EAAE,UAAU,CAAC,CAAA;YAC9F,CAAC;SACF;KACF,CAAA;AACH,CAAC;AArJD,4BAqJC"}--- upstream/dist/mini/config.js.map
++++ /dev/null
+@@ -1 +0,0 @@
+-{"version":3,"file":"config.js","sourceRoot":"","sources":["../../src/mini/config.ts"],"names":[],"mappings":"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"}--- upstream/dist/mini/emit.js.map
++++ /dev/null
+@@ -1 +0,0 @@
+-{"version":3,"file":"emit.js","sourceRoot":"","sources":["../../src/mini/emit.ts"],"names":[],"mappings":"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"}
